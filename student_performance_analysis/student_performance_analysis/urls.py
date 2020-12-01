@@ -20,6 +20,6 @@ import user_app.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('user_app/',include('user_app.urls')),
-    url('^$',include('user_app.urls')),
+    url('performance/',include('user_app.urls')),
+    ##surl('^$',include('user_app.urls')),
 ]
