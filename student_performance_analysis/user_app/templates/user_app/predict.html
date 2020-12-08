@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body style="background-image: url({% static 'user_app/hero-bg.jpg' %}); background-size:100% ;background-repeat:repeat;" >
+      <div class="text-center">
+
+      <h1 class="container">WELCOME TO STUDENT PERFORMANCE ANALYSER </h1>
+    </div>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/bookstore/home/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/bookstore/history/">about<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/bookstore/help/">Help<span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+</div><br>
+  <div class="container" style="background-color: white;">
+    <br>
+    <div class="text-center">
+
+    <h3 class="container">ENTER YOUR DETAILS..... </h3>
+  </div>
+    <form >
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputName" placeholder="Your name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input12th" class="col-sm-2 col-form-label">12th</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="input10th" class="col-sm-2 col-form-label">10th</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputgender" class="col-sm-2 col-form-label">Gender</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="inputgender" required="true">
+                                  <option value="">Select gender..</option>
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="tgender">Transgender</option>
+                                </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputcgpa" class="col-sm-2 col-form-label">CGPA</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputcgpa" placeholder="Your current CGPA">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputbranch" class="col-sm-2 col-form-label">Branch</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="inputbranch" required="true">
+                                  <option value="">Select branch..</option>
+                                  <option value="cse">CSE</option>
+                                  <option value="it">IT</option>
+                                  <option value="civil">CIVIL</option>
+                                  <option value="ece">ECE</option>
+                                  <option value="mech">MECH</option>
+                                  <option value="eee">EEE</option>
+                                  <option value="prod">PROD</option>
+
+                                </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputcurr" class="col-sm-2 col-form-label">Current Back</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputcurr" placeholder="Enter your current back">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputever" class="col-sm-2 col-form-label">Ever Back</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputever" placeholder="Enter your ever back">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputprojects" class="col-sm-2 col-form-label">Technical projects</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputprojects" placeholder="no.of technical projects made">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputquiz" class="col-sm-2 col-form-label">Technical Quiz</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputquiz" placeholder="no.of technical quiz participated">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputevent" class="col-sm-2 col-form-label">Miscellany Tech Events</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputevent" placeholder="no.of miscellany tech events">
+    </div>
+  </div>
+
+  <!-- <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            First radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Second radio
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          <label class="form-check-label" for="gridRadios3">
+            Third disabled radio
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset> -->
+  <!-- <div class="form-group row">
+    <div class="col-sm-2">Checkbox</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-info form-control">Predict</button>
+    </div>
+  </div>
+</form>
+  <br>
+  </div>
+
+  </body>
+</html>
