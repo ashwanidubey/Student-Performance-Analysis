@@ -10,5 +10,26 @@
   <body>
   <h1>this is test page</h1>
   <button type="button" onclick="location.href = '/performance/home/';" class="btn btn-info ">Back</button>
+{% if q%}
+
+
+<table>
+  {% for question in q %}
+<tbody>
+  <tr>
+    <td>{{question.q_id}}::{{question.question}}</td>
+  </tr>
+  <tr>
+
+    <td>A:{{question.opA}}          B:{{question.opB}}</td>
+  </tr>
+    <tr><td>C:{{question.opC}}     D:{{question.opD}}</td>
+
+
+  </tr>
+</tbody>
+{% endfor %}
+</table>
+{%endif%}
   </body>
 </html>

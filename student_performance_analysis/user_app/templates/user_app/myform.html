@@ -20,13 +20,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/bookstore/home/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/performance/home/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/bookstore/history/">about<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/performance/history/">about<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/bookstore/help/">Help<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/performance/help/">Help<span class="sr-only">(current)</span></a>
         </li>
 
       </ul>
@@ -42,21 +42,22 @@
 
     <h3 class="container">ENTER YOUR DETAILS..... </h3>
   </div>
-    <form >
+    <form  method="post" action="/performance/predict/" >
+       {% csrf_token %}
       <br>
   <div class="form-row">
 
   <div class="form-group col-md-6">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Email</label>
     <div class="col-sm-12">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="youremail">
     </div>
   </div>
 
   <div class="form-group col-md-6">
     <label for="inputName" class="col-sm-6 col-form-label">Name</label>
     <div class="col-sm-12">
-      <input type="text" class="form-control" id="inputName" placeholder="Your name">
+      <input type="text" class="form-control" id="inputName" placeholder="Your name" name="yourname">
     </div>
   </div>
 
@@ -65,13 +66,13 @@
   <div class="form-group col-md-6">
     <label for="input12th" class="col-sm-6 col-form-label">12th</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage">
+      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage" name="yourpercent12">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="input10th" class="col-sm-6 col-form-label">10th</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage">
+      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
     </div>
   </div>
 </div>
@@ -79,7 +80,7 @@
   <div class="form-group col-md-6">
     <label for="inputgender" class="col-sm-6 col-form-label">Gender</label>
     <div class="col-sm-12">
-      <select class="form-control" id="inputgender" required="true">
+      <select class="form-control" id="inputgender" required="true" name="yourgender">
                                   <option value="">Select gender..</option>
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
@@ -90,7 +91,7 @@
   <div class="form-group col-md-6">
     <label for="inputcgpa" class="col-sm-6 col-form-label">CGPA</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputcgpa" placeholder="Your current CGPA">
+      <input type="number" class="form-control" id="inputcgpa" placeholder="Your current CGPA" name="yourpercent13">
     </div>
   </div>
 </div>
@@ -98,7 +99,7 @@
   <div class="form-group col-md-6">
     <label for="inputbranch" class="col-sm-6 col-form-label">Branch</label>
     <div class="col-sm-12">
-      <select class="form-control" id="inputbranch" required="true">
+      <select class="form-control" id="inputbranch" required="true" name="yourbranch">
                                   <option value="">Select branch..</option>
                                   <option value="cse">CSE</option>
                                   <option value="it">IT</option>
@@ -114,7 +115,7 @@
   <div class="form-group col-md-6">
     <label for="inputcurr" class="col-sm-6 col-form-label">Current Back</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputcurr" placeholder="Enter your current back">
+      <input type="number" class="form-control" id="inputcurr" placeholder="Enter your current back" name="yourcb">
     </div>
   </div>
 </div>
@@ -122,13 +123,13 @@
   <div class="form-group col-md-6">
     <label for="inputever" class="col-sm-6 col-form-label">Ever Back</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputever" placeholder="Enter your ever back">
+      <input type="number" class="form-control" id="inputever" placeholder="Enter your ever back" name="youreb">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="inputprojects" class="col-sm-6 col-form-label">Technical projects</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputprojects" placeholder="no.of technical projects made">
+      <input type="number" class="form-control" id="inputprojects" placeholder="no.of technical projects made" name="yourproject">
     </div>
   </div>
 </div>
@@ -136,13 +137,13 @@
   <div class="form-group col-md-6">
     <label for="inputquiz" class="col-sm-6 col-form-label">Technical Quiz</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputquiz" placeholder="no.of technical quiz participated">
+      <input type="number" class="form-control" id="inputquiz" placeholder="no.of technical quiz participated" name="yourtq">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="inputevent" class="col-sm-6 col-form-label">Miscellany Tech Events</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputevent" placeholder="no.of miscellany tech events">
+      <input type="number" class="form-control" id="inputevent" placeholder="no.of miscellany tech events" name="yourte">
     </div>
   </div>
 </div>
@@ -193,7 +194,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <button type="submit" class="btn btn-info ">Predict</button>
 
-</div>
+<!--</div>-->
 </div>
 </center>
 </form>
