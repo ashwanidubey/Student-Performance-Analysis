@@ -10,10 +10,8 @@ def myform(request):
 def taketest(request):
     randlist=random.sample(range(1,40),10)
     randlist.sort()
-    for i in range(1,10):
-        q2=models.QuestionBank.objects.filter(q_id=randlist[i])
-        q1 = q1.union(q2)
-    return render(request,'user_app/taketest.html',{'q':q1})
+
+    return render(request,'user_app/taketest.html')
 def predict(request):
     if request.method=='POST':
         print(request.POST)
