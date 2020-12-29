@@ -9,4 +9,4 @@ class QuestionBank(models.Model):
     opD=models.CharField(max_length=100)
     answer=models.CharField(max_length=100)
     def __str__(self):
-        return str(self.q_id)
+        return "question no : "+str(self.q_id)

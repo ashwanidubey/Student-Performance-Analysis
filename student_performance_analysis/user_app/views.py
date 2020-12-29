@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import  models
-
+import random
 
 
 def home(request):
@@ -8,8 +8,12 @@ def home(request):
 def myform(request):
     return render(request,'user_app/myform.html')
 def taketest(request):
-    q=models.QuestionBank.objects.all()
-    return render(request,'user_app/taketest.html',{'q':q})
+    randlist=random.sample(range(1,40),10)
+    randlist.sort()
+    for i in range(1,10):
+        q2=models.QuestionBank.objects.filter(q_id=randlist[i])
+        q1 = q1.union(q2)
+    return render(request,'user_app/taketest.html',{'q':q1})
 def predict(request):
     if request.method=='POST':
         print(request.POST)
