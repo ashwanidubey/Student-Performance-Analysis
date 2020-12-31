@@ -45,7 +45,7 @@
     <form  method="post" action="/performance/predict/" >
        {% csrf_token %}
       <br>
-  <div class="form-row">
+  <!-- <div class="form-row">
 
   <div class="form-group col-md-6">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Email</label>
@@ -61,8 +61,128 @@
     </div>
   </div>
 
-</div>
+</div> -->
 <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="1a" class="col-sm-6 col-form-label">Coding Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="1a" placeholder="In percentage" name="coding">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="2a" class="col-sm-6 col-form-label">Aptitude Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="2a" placeholder="In percentage" name="aptitude">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="3a" class="col-sm-6 col-form-label">Technical Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="3a" placeholder="In percentage" name="technical">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="4a" class="col-sm-6 col-form-label">Communication Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="4a" placeholder="In percentage" name="communication">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="5a" class="col-sm-6 col-form-label">Presentation Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="5a" placeholder="In percentage" name="presentation">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="6a" class="col-sm-6 col-form-label">Academic Performance</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="6a" placeholder="In percentage" name="academics">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="7a" class="col-sm-6 col-form-label">Puzzel Solving Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="7a" placeholder="In percentage" name="puzzel">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="8a" class="col-sm-6 col-form-label">English Proficiency</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="8a" placeholder="In percentage" name="english">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="9a" class="col-sm-6 col-form-label">Programming Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="9a" placeholder="In percentage" name="programming">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="10a" class="col-sm-6 col-form-label">Management Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="10a" placeholder="In percentage" name="management">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="11a" class="col-sm-6 col-form-label">Projects</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="11a" placeholder="In percentage" name="projects">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="12a" class="col-sm-6 col-form-label">Internships</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="12a" placeholder="In percentage" name="internship">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="13a" class="col-sm-6 col-form-label">Training</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="13a" placeholder="In percentage" name="training">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="14a" class="col-sm-6 col-form-label">Backlogs</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="14a" placeholder="In percentage" name="backlog">
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="15a" class="col-sm-6 col-form-label">Core Knowledge</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="15a" placeholder="In percentage" name="core">
+    </div>
+  </div>
+  <!-- <div class="form-group col-md-6">
+    <label for="input10th" class="col-sm-6 col-form-label">10th</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
+    </div>
+  </div> -->
+</div>
+
+<!-- <div class="form-row">
   <div class="form-group col-md-6">
     <label for="input12th" class="col-sm-6 col-form-label">12th</label>
     <div class="col-sm-12">
@@ -76,7 +196,24 @@
     </div>
   </div>
 </div>
+
 <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="input12th" class="col-sm-6 col-form-label">12th</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage" name="yourpercent12">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="input10th" class="col-sm-6 col-form-label">10th</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="form-row">
   <div class="form-group col-md-6">
     <label for="inputgender" class="col-sm-6 col-form-label">Gender</label>
     <div class="col-sm-12">
@@ -94,8 +231,8 @@
       <input type="number" class="form-control" id="inputcgpa" placeholder="Your current CGPA" name="yourpercent13">
     </div>
   </div>
-</div>
-<div class="form-row">
+</div> -->
+<!-- <div class="form-row">
   <div class="form-group col-md-6">
     <label for="inputbranch" class="col-sm-6 col-form-label">Branch</label>
     <div class="col-sm-12">
@@ -118,8 +255,8 @@
       <input type="number" class="form-control" id="inputcurr" placeholder="Enter your current back" name="yourcb">
     </div>
   </div>
-</div>
-<div class="form-row">
+</div> -->
+<!-- <div class="form-row">
   <div class="form-group col-md-6">
     <label for="inputever" class="col-sm-6 col-form-label">Ever Back</label>
     <div class="col-sm-12">
@@ -146,7 +283,7 @@
       <input type="number" class="form-control" id="inputevent" placeholder="no.of miscellany tech events" name="yourte">
     </div>
   </div>
-</div>
+</div> -->
 
   <!-- <fieldset class="form-group">
     <div class="row">

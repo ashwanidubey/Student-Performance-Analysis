@@ -805,30 +805,28 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
 					<div style="  display:inline-block;border:2px solid #ff0000;"> Time left: <font color="red" id="timer"></font> </div>&nbsp; &nbsp;</div>
 			</div>&nbsp;
 			<hr>
-			{% if q%}
-        {% for t1 in q%}
 			<div class="lque" id="y1" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
 				<div style="display:none;" id="1" class="lquee">
 					<table style="font-size: 25px; padding:10px;">
 						<tdead>
-							<td>(1) &#160;{{t1.question}}
+							<td>(1) &#160;If CP is 40% of SP. The % that SP is of CP is ?
 								<hr width="0px"> </td>
 							</thead>
 							<tr>
 								<td>(a)
-									<input type="radio" id="arch10" name="a100" value="a">{{t1.opA}} </td>
+									<input type="radio" id="arch10" name="a100" value="a">250 </td>
 							</tr>
 							<tr>
 								<td> (b)
-									<input type="radio" id="arch20" name="a100" value="b">{{t1.opB}} </tr>
+									<input type="radio" id="arch20" name="a100" value="b">240 </tr>
 							</td>
 							<tr>
 								<td>(c)
-									<input type="radio" id="arch30" name="a100" value="c">{{t1.opC}} </td>
+									<input type="radio" id="arch30" name="a100" value="c">620 </td>
 							</tr>
 							<tr>
 								<td>(d)
-									<input type="radio" id="arch40" name="a100" value="d">{{t1.opD}} </td>
+									<input type="radio" id="arch40" name="a100" value="d">40 </td>
 							</tr>
 					</table>
 					<input type="hidden" name="ab100" value="1">
@@ -859,16 +857,504 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
 				<center>
 					<button type="button" class="button11a" onclick="rev1()">Mark for review</button> &#160; &#160; &#160;
 					<button type="button" class="button11a" onclick="crev1()">Clear review </button> &#160; &#160; &#160;
-          <button type="button" class="button11a" id="a1" onclick="myFunction2()">Previous </button>
-          <button type="button" class="button11a" id="a1" onclick="myFunction2()">Submit </button>
-          <button type="button" class="button11a" id="a1" onclick="myFunction2()">Next </button>
-
+					<button type="button" class="button11a" id="a1" onclick="myFunction2()">Next </button>
 				</center>
 			</div>
-        {%endfor%}
-			{%endif%}
-
-
+			<div class="lque" id="y2" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="2" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(2) &#160;If x varies as y, and y=7 when x=18, find x when y=21 ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch11" name="a101" value="a">36 </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch21" name="a101" value="b">54 </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch31" name="a101" value="c">72 </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch41" name="a101" value="d">18 </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab101" value="2">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a101");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x2" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev2()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev2()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a2" onclick="myFunction3()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y3" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="3" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(3) &#160;40% of 20% + 30% of 25% + 50% of 28% is equivalent to ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch12" name="a102" value="a">29.5% </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch22" name="a102" value="b">28.5% </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch32" name="a102" value="c">30.5% </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch42" name="a102" value="d">None of these </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab102" value="3">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a102");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x3" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev3()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev3()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a3" onclick="myFunction4()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y4" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="4" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(4) &#160;If x% of a is the same as y% of b then z% of b is ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch13" name="a103" value="a">(yz/x)% of a </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch23" name="a103" value="b">(xy/z)% of a </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch33" name="a103" value="c">(xz/y)% of a </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch43" name="a103" value="d">None of these </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab103" value="4">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a103");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x4" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev4()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev4()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a4" onclick="myFunction5()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y5" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="5" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(5) &#160;6 men can do work in 12 days. How many men are can do work in 18 days ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch14" name="a104" value="a">3 men </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch24" name="a104" value="b">6 men </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch34" name="a104" value="c">4 men </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch44" name="a104" value="d">2 men </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab104" value="5">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a104");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x5" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev5()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev5()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a5" onclick="myFunction6()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y6" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="6" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(6) &#160;A train 280m long, running with a speed of 63 km/hr will pass an electric pole in ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch15" name="a105" value="a">20 sec </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch25" name="a105" value="b">16 sec </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch35" name="a105" value="c">15 sec </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch45" name="a105" value="d">18 sec </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab105" value="6">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a105");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x6" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev6()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev6()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a6" onclick="myFunction7()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y7" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="7" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(7) &#160;The value of log base2(log base5 625) is ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch16" name="a106" value="a">2 </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch26" name="a106" value="b">5 </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch36" name="a106" value="c">10 </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch46" name="a106" value="d">15 </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab106" value="7">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a106");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x7" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev7()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev7()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a7" onclick="myFunction8()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y8" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="8" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(8) &#160;Find 9th term of HP 6,4,3.... ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch17" name="a107" value="a">7/5 </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch27" name="a107" value="b">6/5 </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch37" name="a107" value="c">5/6 </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch47" name="a107" value="d">None of these </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab107" value="8">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a107");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x8" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev8()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev8()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a8" onclick="myFunction9()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y9" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="9" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(9) &#160;How many ways can 5 people be selected from group of 10 ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch18" name="a108" value="a">272 </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch28" name="a108" value="b">282 </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch38" name="a108" value="c">252 </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch48" name="a108" value="d">242 </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab108" value="9">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a108");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x9" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev9()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev9()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a9" onclick="myFunction10()">Next </button>
+				</center>
+			</div>
+			<div class="lque" id="y10" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
+				<div style="display:none;" id="10" class="lquee">
+					<table style="font-size: 25px; padding:10px;">
+						<tdead>
+							<td>(10) &#160;Find 2 natural number whose sum is 85 and LCM is 102 ?
+								<hr width="0px"> </td>
+							</thead>
+							<tr>
+								<td>(a)
+									<input type="radio" id="arch19" name="a109" value="a">30 and 55 </td>
+							</tr>
+							<tr>
+								<td> (b)
+									<input type="radio" id="arch29" name="a109" value="b">17 and 68 </tr>
+							</td>
+							<tr>
+								<td>(c)
+									<input type="radio" id="arch39" name="a109" value="c">35 and 55 </td>
+							</tr>
+							<tr>
+								<td>(d)
+									<input type="radio" id="arch49" name="a109" value="d">51 and 34 </td>
+							</tr>
+					</table>
+					<input type="hidden" name="ab109" value="10">
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a109");
+					var booRadio;
+					var x1 = 0;
+					for(x1 = 0; x1 < allRadios.length; x1++) {
+						allRadios[x1].onclick = function() {
+							if(booRadio == this) {
+								this.checked = false;
+								booRadio = null;
+							} else {
+								booRadio = this;
+							}
+						};
+						if(allRadios[x1].checked) {
+							//
+						} else {
+							//
+						}
+					}
+					</script>
+				</div>
+			</div>
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x10" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev10()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev10()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a10" onclick="myFunction11()">Next </button>
+				</center>
+			</div>
 		</div>
 		<div style="float:right; border:2px solid; width:28%; height:100%;">
 			<div style="height:45px; padding:10px;"> <font style="font-size: 20px;"> Name:- abc def </font>
@@ -910,7 +1396,7 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
 			<hr>
 			<div style="">
 				<center>
-					<button class="button11a button12a" onclick="return confirmalert();" type="submit" value="submit">Submit </button>
+					<button class="button11a button12a" onclick="return confirmalert();" type="submit" value="submit">FINISH </button>
 				</center>
 			</div>
 		</div>
