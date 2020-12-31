@@ -786,6 +786,7 @@
 </head>
 
 <body onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);">
+
 	<form action="result_new.php" method="post" id="form">
 		<div style="float:left;border:2px solid; width:70%; height:100%;">
 			<div style="height:auto;background: #39a1a1;font-size: 60px;
@@ -809,6 +810,7 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
         {% for t1 in q%}
 			<div class="lque" id="y1" style="max-height: 420px; display:none; min-height: 420px; overflow-y: scroll;">
 				<div style="display:none;" id="1" class="lquee">
+<<<<<<< HEAD
 					<table style="font-size: 25px; padding:10px;">
 						<tdead>
 							<td>(1) &#160;{{t1.question}}
@@ -834,6 +836,25 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
 					<input type="hidden" name="ab100" value="1">
 					<script type="text/javascript">
 					var allRadios = document.getElementsByName("a100");
+=======
+
+
+
+					{% for t1 in q %}
+
+
+		      {{t1.question}}
+		      {{t1.opA}}
+		      {{t1.opB}}
+		     {{t1.opC}}
+		      {{t1.opD}}
+
+
+
+		  {% endfor %}
+					<script type="text/javascript">
+					var allRadios = document.getElementsByName("a109");
+>>>>>>> 7b928c7621d84100554bd37c5e113d2858cf9dee
 					var booRadio;
 					var x1 = 0;
 					for(x1 = 0; x1 < allRadios.length; x1++) {
@@ -854,6 +875,7 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
 					</script>
 				</div>
 			</div>
+<<<<<<< HEAD
 			<div class="lqu" style="display:none; border-top: 1px solid;" id="x1" style="height:40px;">
 				<br>
 				<center>
@@ -863,6 +885,14 @@ text-shadow: 3px 3px 13px rgba(5,19,28,0.68);
           <button type="button" class="button11a" id="a1" onclick="myFunction2()">Submit </button>
           <button type="button" class="button11a" id="a1" onclick="myFunction2()">Next </button>
 
+=======
+			<div class="lqu" style="display:none; border-top: 1px solid;" id="x10" style="height:40px;">
+				<br>
+				<center>
+					<button type="button" class="button11a" onclick="rev10()">Mark for review</button> &#160; &#160; &#160;
+					<button type="button" class="button11a" onclick="crev10()">Clear review </button> &#160; &#160; &#160;
+					<button type="button" class="button11a" id="a10" onclick="myFunction11()">Next </button>
+>>>>>>> 7b928c7621d84100554bd37c5e113d2858cf9dee
 				</center>
 			</div>
         {%endfor%}
