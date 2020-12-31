@@ -100,10 +100,10 @@ body {
 			{% csrf_token %}
 
 			<!-- <h3>question : {{q.question}} </h3> -->
-
+      <input type="hidden" name="id" value={{n}}>
       <table style="font-size: 25px; padding:10px; margin-top: 20px;">
         <tdead>
-          <td>(1) &#160;{{q.question}}
+          <td>{{qn}} &#160;{{q.question}}
             <hr width="0px"> </td>
           </thead>
           <tr>
@@ -124,47 +124,32 @@ body {
           </tr>
 
       </table>
-
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0 button11a" type="submit">Submitt</button> -->
-
-      <center>
+  <center>
       <div class="container d-flex h-100 ">
         <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
-
           <button type="button" onclick="location.href = '/performance/home/';" class="btn btn-info ">Back</button>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <button type="submit" class="btn btn-info ">Submit</button>
-
-      <!--</div>-->
       </div>
       </center>
-<!--
-			A:{{q.opA}}<input type="radio"  name="gender" value={{q.opA}}>
-			B:{{q.opB}}<input type="radio"  name="gender" value={{q.opB}}>
-			C:{{q.opC}}<input type="radio" id="male" name="gender" value={{q.opC}}>
-			D:{{q.opD}}<input type="radio" id="male" name="gender" value={{q.opD}}> -->
-
-
-
-
 		</form>
   </div>
 
   <div class="sidenav" >
-<a class="nav-link" href="/performance/showquestion/">Clear Responce<span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/performance/showquestion/?id={{n}},1">Clear Responce<span class="sr-only">(current)</span></a>
       <h5 style="color:white">visited :0</h5>
 			<h5 style="color:white">not visited :0</h5>
-			<a class="nav-link" href="/performance/showquestion/">1<span class="sr-only">(current)</span></a>
-				<a class="nav-link" href="/performance/showquestion/">2 <span class="sr-only">(current)</span></a>
-				<a class="nav-link" href="/performance/showquestion/">3 <span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">4<span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">5<span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">6 <span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">7 <span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">8<span class="sr-only">(current)</span></a>
+			<a class="nav-link" href="/performance/showquestion/?id=0">1<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="/performance/showquestion/?id=1">2 <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="/performance/showquestion/?id=2">3 <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=3">4<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=4">5<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=5">6 <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=6">7 <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=7">8<span class="sr-only">(current)</span></a>
 
-					<a class="nav-link" href="/performance/showquestion/">9<span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="/performance/showquestion/">10 <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=8">9<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="/performance/showquestion/?id=9">10 <span class="sr-only">(current)</span></a>
 
 
 </div>

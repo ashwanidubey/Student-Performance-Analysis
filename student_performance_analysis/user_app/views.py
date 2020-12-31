@@ -14,8 +14,9 @@ def taketest(request):
     randlist.sort()
     for i in range(0,10):
         q_nos.append(randlist[i])
+    print(q_nos)
     q=models.QuestionBank.objects.get(q_id=q_nos[0])
-    return render(request,'user_app/taketest.html',{'q':q})
+    return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
 def predict(request):
     if request.method=='POST':
 
@@ -27,5 +28,29 @@ def history(request):
 def help(request):
     return render(request,'user_app/help.html')
 def showquestion(request):
-      q=models.QuestionBank.objects.filter(q_id=q_nos[1])
-      return render(request,'user_app/taketest.html',{'q':q})
+
+    global q_nos
+    print(q_nos)
+    if request.method=='POST':
+        #print(q_nos)
+        print(request.POST)
+        id=int(request.POST['id'])+1
+        print(id)
+        q=models.QuestionBank.objects.get(q_id=q_nos[id])
+        return render(request,'user_app/taketest.html',{'q':q,'n':id,'qn':id})
+    if request.method=='GET':
+        print("jai ho",request.GET)
+        if ',' in  request.GET['id']:
+            id=request.GET['id'].split(',')
+            print(id,"saaaleeee")
+            id=id[0]
+
+            id=int(id)
+        else :
+            id=int(request.GET['id'])+1
+        if id==10:
+            id=0
+        print("bro ",id)
+        print(q_nos)
+        q=models.QuestionBank.objects.get(q_id=q_nos[id])
+        return render(request,'user_app/taketest.html',{'q':q,'n':id,'qn':id})
