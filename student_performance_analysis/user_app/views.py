@@ -14,14 +14,13 @@ def taketest(request):
     randlist.sort()
     for i in range(0,10):
         q_nos.append(randlist[i])
-    q=models.QuestionBank.objects.filter(q_id=q_nos[0])
+    q=models.QuestionBank.objects.get(q_id=q_nos[0])
     return render(request,'user_app/taketest.html',{'q':q})
 def predict(request):
     if request.method=='POST':
-        print(request.POST)
+
         data={'name':request.POST['yourname'],'email':request.POST['youremail'],'cpi':request.POST['yourpercent13'],'branch':request.POST['yourbranch'],'gender':request.POST['yourgender'],'inter':request.POST['yourpercent12'],'highschool':request.POST['yourpercent10'],'currentback':request.POST['yourcb'],'everback':request.POST['youreb'],'project':request.POST['yourproject'],'techevent':request.POST['yourte'],'techquiz':request.POST['yourtq']}
-        for x in data:
-            print(x," ",data[x])
+
         return render(request,'user_app/predict.html',data)
 def history(request):
     return render(request,'user_app/history.html')
