@@ -7,27 +7,153 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+.sidenav h5 {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+.head{
+  margin:5px;
+  padding:5px;
+  background-color: #a29bfe;
+  text-align: center;
+  font-size: 50px;
+}
+.button11a {
+  padding: 8px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 5px 2px;
+
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button11a {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #101010;
+  border-radius: 5px;
+  box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.2), 0 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
   </head>
 
   <body  >
 
+  <!-- <div class="">
+    <h1>TEST</h1>
+  </div> -->
+  <div class="content" >
+    <div class="head">
+      TEST
+    </div>
+
 		<form class="form-inline my-2 my-lg-0" action="/performance/showquestion/" method="post">
 			{% csrf_token %}
 
-			<h1>question : {{q.question}}</h1>
+			<!-- <h3>question : {{q.question}} </h3> -->
 
+      <table style="font-size: 25px; padding:10px; margin-top: 20px;">
+        <tdead>
+          <td>(1) &#160;{{q.question}}
+            <hr width="0px"> </td>
+          </thead>
+          <tr>
+            <td>(a)
+              <input type="radio" id="arch13" name="a103" value="{{q.opB}}">{{q.opA}} </td>
+          </tr>
+          <tr>
+            <td> (b)
+              <input type="radio" id="arch23" name="a103" value="{{q.opB}}">{{q.opB}}</tr>
+          </td>
+          <tr>
+            <td>(c)
+              <input type="radio" id="arch33" name="a103" value="{{q.opB}}">{{q.opC}} </td>
+          </tr>
+          <tr>
+            <td>(d)
+              <input type="radio" id="arch43" name="a103" value="{{q.opB}}">{{q.opD}}</td>
+          </tr>
 
+      </table>
 
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0 button11a" type="submit">Submitt</button> -->
+
+      <center>
+      <div class="container d-flex h-100 ">
+        <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
+
+          <button type="button" onclick="location.href = '/performance/home/';" class="btn btn-info ">Back</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-info ">Submit</button>
+
+      <!--</div>-->
+      </div>
+      </center>
+<!--
 			A:{{q.opA}}<input type="radio"  name="gender" value={{q.opA}}>
 			B:{{q.opB}}<input type="radio"  name="gender" value={{q.opB}}>
 			C:{{q.opC}}<input type="radio" id="male" name="gender" value={{q.opC}}>
-			D:{{q.opD}}<input type="radio" id="male" name="gender" value={{q.opD}}>
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submitt</button>
+			D:{{q.opD}}<input type="radio" id="male" name="gender" value={{q.opD}}> -->
+
+
+
 
 		</form>
-<a class="nav-link" href="/performance/showquestion/">clear responce<span class="sr-only">(current)</span></a>
-      <h3>visited :0</h3>
-			<h3>not visited :0</h3>
+  </div>
+
+  <div class="sidenav" >
+<a class="nav-link" href="/performance/showquestion/">Clear Responce<span class="sr-only">(current)</span></a>
+      <h5 style="color:white">visited :0</h5>
+			<h5 style="color:white">not visited :0</h5>
 			<a class="nav-link" href="/performance/showquestion/">1<span class="sr-only">(current)</span></a>
 				<a class="nav-link" href="/performance/showquestion/">2 <span class="sr-only">(current)</span></a>
 				<a class="nav-link" href="/performance/showquestion/">3 <span class="sr-only">(current)</span></a>
@@ -41,6 +167,7 @@
 					<a class="nav-link" href="/performance/showquestion/">10 <span class="sr-only">(current)</span></a>
 
 
+</div>
 
 
   </body>
