@@ -46,7 +46,22 @@ def predict(request):
         xt=np.array(x).reshape(1,-1)
         pr=regressor.predict(xt)
         #print(xt,"uff",pr)
-        data={'chance':pr[0]}
+        p=pr[0]
+        if p<50:
+            c="only"
+            if p<15:
+                s="sorry to say but you cannot get placement with this skills"
+            elif p<30:
+                s="very low chance ,please,boost your skills"
+            else:
+                s="you are not in safe zone , keep learning"
+            data={'chance':p,'slogan':s,'c':c}
+        else:
+            if p<75:
+                s="keep it up"
+            else:
+                s="wish you for a bright future"
+            data={'chance':p,'slogan':s}
         return render(request,'user_app/predict.html',data)
 def history(request):
     return render(request,'user_app/history.html')
