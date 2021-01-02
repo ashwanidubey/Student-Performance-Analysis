@@ -4,20 +4,41 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
-  <body>
+  <body style="background-image: url({% static 'user_app/hero-bg.jpg' %}); background-size:100% ;background-repeat:repeat;" >
+      <div class="text-center">
 
-    <h1>email:{{email}}</h1>
-    <h1>name:{{name}}</h1>
-    <h1>gender:{{gender}}</h1>
-    <h1>cpi:{{cpi}}</h1>
-    <h1>branch:{{branch}}</h1>
-    <h1>intermediate:{{inter}}</h1>
-    <h1>highschool:{{highschool}}</h1>
-    <h1>current back :{{currentback}}</h1>
-    <h1>ever back :{{everback}}</h1>
-    <h1>projects:{{projecr}}</h1>
-    <h1>technical event :{{techevent}}</h1>
-    <h1>tech quiz:{{techquiz}}</h1>
+      <h1 class="container">WELCOME TO STUDENT PERFORMANCE ANALYSER </h1>
+    </div>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/performance/home/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/performance/history/">about<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/performance/help/">Help<span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+  </div>
+  <br><br>
+
+  <div class="jumbotron text-center">
+    <h1>there is chance of  {{chance}}  % to place</h1>
+    <p>Keep it up</p>
+  </div>
+
   </body>
 </html>

@@ -1,6 +1,26 @@
+import os
 from django.shortcuts import render
 from . import  models
 import random
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+
+df=pd.read_csv('mydataset.csv')
+xdata=df.iloc[:,0:-1].values
+ydata=df.iloc[:,-1].values
+x_train,x_test,y_train,y_test=train_test_split(xdata,ydata,test_size=.2,random_state=1)
+regressor=RandomForestRegressor(n_estimators=50,random_state=0)
+regressor.fit(x_train,y_train)
+#cur_dir=os.getcwd()
+#content_list=os.listdir(cur_dir)
+#for x in content_list:
+#        if x.split('.')[-1]=='csv':
+            #csv_files.append(x)
+#            print(x)
+#        else:
+#            print("jai ho",x)
 q_nos=list()
 
 def home(request):
@@ -18,10 +38,15 @@ def taketest(request):
     q=models.QuestionBank.objects.get(q_id=q_nos[0])
     return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
 def predict(request):
+    global regressor
     if request.method=='POST':
-
-        data={'name':request.POST['yourname'],'email':request.POST['youremail'],'cpi':request.POST['yourpercent13'],'branch':request.POST['yourbranch'],'gender':request.POST['yourgender'],'inter':request.POST['yourpercent12'],'highschool':request.POST['yourpercent10'],'currentback':request.POST['yourcb'],'everback':request.POST['youreb'],'project':request.POST['yourproject'],'techevent':request.POST['yourte'],'techquiz':request.POST['yourtq']}
-
+        #print(request.POST)
+        x=[request.POST['coding'],request.POST['aptitude'],request.POST['technical'],request.POST['communication'],request.POST['core'],request.POST['presentation'],request.POST['academics'],request.POST['puzzel'],request.POST['english'],request.POST['programming'],request.POST['management'],request.POST['projects'],request.POST['internship'],request.POST['training'],request.POST['backlog']]
+        print(x)
+        xt=np.array(x).reshape(1,-1)
+        pr=regressor.predict(xt)
+        #print(xt,"uff",pr)
+        data={'chance':pr[0]}
         return render(request,'user_app/predict.html',data)
 def history(request):
     return render(request,'user_app/history.html')
