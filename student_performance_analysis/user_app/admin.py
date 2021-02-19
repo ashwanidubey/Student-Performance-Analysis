@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import QuestionBank
+from .models import Aptitude,Communication,ProgrammingLogic
 # Register your models here.
-admin.site.register(QuestionBank)
+admin.site.register(Aptitude)
+admin.site.register(Communication)
+admin.site.register(ProgrammingLogic)
