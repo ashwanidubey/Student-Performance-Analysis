@@ -6,6 +6,148 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <script>
+ $(document).ready(function(){
+  $(".ab").keyup(function() {
+   if($(".ab").val()<0 || $(".ab").val()>100 ){
+       // $('#errorMsg').show();
+       alert("Input must be in between 0 to 100");
+   }
+   // else{
+   // $('#errorMsg').hide();
+   // }
+   });
+   $(".ab1").keyup(function() {
+    if($(".ab1").val()<0 || $(".ab1").val()>100 ){
+        // $('#errorMsg').show();
+        alert("Input must be in between 0 to 100");
+    }
+    // else{
+    // $('#errorMsg').hide();
+    // }
+    });
+    $(".ab2").keyup(function() {
+     if($(".ab2").val()<0 || $(".ab2").val()>100 ){
+         // $('#errorMsg').show();
+         alert("Input must be in between 0 to 100");
+     }
+     // else{
+     // $('#errorMsg').hide();
+     // }
+     });
+     $(".ab3").keyup(function() {
+      if($(".ab3").val()<0 || $(".ab3").val()>100 ){
+          // $('#errorMsg').show();
+          alert("Input must be in between 0 to 100");
+      }
+      // else{
+      // $('#errorMsg').hide();
+      // }
+      });
+      $(".ab4").keyup(function() {
+       if($(".ab4").val()<0 || $(".ab4").val()>100 ){
+           // $('#errorMsg').show();
+           alert("Input must be in between 0 to 100");
+       }
+       // else{
+       // $('#errorMsg').hide();
+       // }
+       });
+       $(".ab5").keyup(function() {
+        if($(".ab5").val()<0 || $(".ab5").val()>100 ){
+            // $('#errorMsg').show();
+            alert("Input must be in between 0 to 100");
+        }
+        // else{
+        // $('#errorMsg').hide();
+        // }
+        });
+        $(".ab6").keyup(function() {
+         if($(".ab6").val()<0 || $(".ab6").val()>100 ){
+             // $('#errorMsg').show();
+             alert("Input must be in between 0 to 100");
+         }
+         // else{
+         // $('#errorMsg').hide();
+         // }
+         });
+         $(".ab7").keyup(function() {
+          if($(".ab7").val()<0 || $(".ab7").val()>100 ){
+              // $('#errorMsg').show();
+              alert("Input must be in between 0 to 100");
+          }
+          // else{
+          // $('#errorMsg').hide();
+          // }
+          });
+          $(".ab8").keyup(function() {
+           if($(".ab8").val()<0 || $(".ab8").val()>100 ){
+               // $('#errorMsg').show();
+               alert("Input must be in between 0 to 100");
+           }
+           // else{
+           // $('#errorMsg').hide();
+           // }
+           });
+           $(".ab9").keyup(function() {
+            if($(".ab9").val()<0 || $(".ab9").val()>100 ){
+                // $('#errorMsg').show();
+                alert("Input must be in between 0 to 100");
+            }
+            // else{
+            // $('#errorMsg').hide();
+            // }
+            });
+            $(".ab10").keyup(function() {
+             if($(".ab10").val()<0 || $(".ab10").val()>100 ){
+                 // $('#errorMsg').show();
+                 alert("Input must be in between 0 to 100");
+             }
+             // else{
+             // $('#errorMsg').hide();
+             // }
+             });
+             $(".ab11").keyup(function() {
+              if($(".ab11").val()<0 || $(".ab11").val()>100 ){
+                  // $('#errorMsg').show();
+                  alert("Input must be in between 0 to 100");
+              }
+              // else{
+              // $('#errorMsg').hide();
+              // }
+              });
+              $(".ab12").keyup(function() {
+               if($(".ab12").val()<0 || $(".ab12").val()>100 ){
+                   // $('#errorMsg').show();
+                   alert("Input must be in between 0 to 100");
+               }
+               // else{
+               // $('#errorMsg').hide();
+               // }
+               });
+               $(".ab13").keyup(function() {
+                if($(".ab13").val()<0 || $(".ab13").val()>100 ){
+                    // $('#errorMsg').show();
+                    alert("Input must be in between 0 to 100");
+                }
+                // else{
+                // $('#errorMsg').hide();
+                // }
+                });
+                $(".ab14").keyup(function() {
+                 if($(".ab14").val()<0 || $(".ab14").val()>100 ){
+                     // $('#errorMsg').show();
+                     alert("Input must be in between 0 to 100");
+                 }
+                 // else{
+                 // $('#errorMsg').hide();
+                 // }
+                 });
+});
+</script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   </head>
@@ -66,13 +208,17 @@
   <div class="form-group col-md-6">
     <label for="1a" class="col-sm-6 col-form-label">Coding Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="1a" placeholder="In percentage" name="coding">
+      <input type="number" class="form-control ab" id="1a" placeholder="In percentage" name="coding">
+      <!-- <span id="errorMsg" style="display:none;">you can give score -10 to +10 only</span> -->
+
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="2a" class="col-sm-6 col-form-label">Aptitude Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="2a" placeholder="In percentage" name="aptitude">
+      <input type="number" class="form-control ab1" id="2a" placeholder="In percentage" name="aptitude">
+      <!-- <span id="errorMsg" style="display:none;">you can give score -10 to +10 only</span> -->
+
     </div>
   </div>
 </div>
@@ -81,13 +227,13 @@
   <div class="form-group col-md-6">
     <label for="3a" class="col-sm-6 col-form-label">Technical Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="3a" placeholder="In percentage" name="technical">
+      <input type="number" class="form-control ab2" id="3a" placeholder="In percentage" name="technical">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="4a" class="col-sm-6 col-form-label">Communication Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="4a" placeholder="In percentage" name="communication">
+      <input type="number" class="form-control ab3" id="4a" placeholder="In percentage" name="communication">
     </div>
   </div>
 </div>
@@ -96,28 +242,28 @@
   <div class="form-group col-md-6">
     <label for="5a" class="col-sm-6 col-form-label">Presentation Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="5a" placeholder="In percentage" name="presentation">
+      <input type="number" class="form-control ab4" id="5a" placeholder="In percentage" name="presentation">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="6a" class="col-sm-6 col-form-label">Academic Performance</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="6a" placeholder="In percentage" name="academics">
+      <input type="number" class="form-control ab5" id="6a" placeholder="In percentage" name="academics">
     </div>
   </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6">
-    <label for="7a" class="col-sm-6 col-form-label">Puzzel Solving Skills</label>
+    <label for="7a" class="col-sm-6 col-form-label">Puzzle Solving Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="7a" placeholder="In percentage" name="puzzel">
+      <input type="number" class="form-control ab6" id="7a" placeholder="In percentage" name="puzzel">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="8a" class="col-sm-6 col-form-label">English Proficiency</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="8a" placeholder="In percentage" name="english">
+      <input type="number" class="form-control ab7" id="8a" placeholder="In percentage" name="english">
     </div>
   </div>
 </div>
@@ -126,13 +272,13 @@
   <div class="form-group col-md-6">
     <label for="9a" class="col-sm-6 col-form-label">Programming Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="9a" placeholder="In percentage" name="programming">
+      <input type="number" class="form-control ab8" id="9a" placeholder="In percentage" name="programming">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="10a" class="col-sm-6 col-form-label">Management Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="10a" placeholder="In percentage" name="management">
+      <input type="number" class="form-control ab9" id="10a" placeholder="In percentage" name="management">
     </div>
   </div>
 </div>
@@ -141,13 +287,13 @@
   <div class="form-group col-md-6">
     <label for="11a" class="col-sm-6 col-form-label">Projects</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="11a" placeholder="In percentage" name="projects">
+      <input type="number" class="form-control ab10" id="11a" placeholder="In percentage" name="projects">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="12a" class="col-sm-6 col-form-label">Internships</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="12a" placeholder="In percentage" name="internship">
+      <input type="number" class="form-control ab11" id="12a" placeholder="In percentage" name="internship">
     </div>
   </div>
 </div>
@@ -156,13 +302,13 @@
   <div class="form-group col-md-6">
     <label for="13a" class="col-sm-6 col-form-label">Training</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="13a" placeholder="In percentage" name="training">
+      <input type="number" class="form-control ab12" id="13a" placeholder="In percentage" name="training">
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="14a" class="col-sm-6 col-form-label">Backlogs</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="14a" placeholder="In percentage" name="backlog">
+      <input type="number" class="form-control ab13" id="14a" placeholder="In percentage" name="backlog">
     </div>
   </div>
 </div>
@@ -171,7 +317,7 @@
   <div class="form-group col-md-6">
     <label for="15a" class="col-sm-6 col-form-label">Core Knowledge</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control" id="15a" placeholder="In percentage" name="core">
+      <input type="number" class="form-control ab14" id="15a" placeholder="In percentage" name="core">
     </div>
   </div>
   <!-- <div class="form-group col-md-6">
@@ -338,6 +484,7 @@
   <br>
   </div>
   <br><br><br>
+
 
   </body>
 </html>
