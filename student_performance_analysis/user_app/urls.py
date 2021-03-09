@@ -4,7 +4,7 @@ from django.conf.urls import url
 urlpatterns=[
 url('home/',views.home),
 url('myform/',views.myform),
-url('taketest/',views.taketest),
+url('taketest1/',views.taketest1),
 url('predict/',views.predict),
 url('history/',views.history),
 url('help/',views.help),

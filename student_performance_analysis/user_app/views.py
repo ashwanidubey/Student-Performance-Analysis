@@ -20,16 +20,17 @@ def home(request):
     return render(request,'user_app/index.html')
 def myform(request):
     return render(request,'user_app/myform.html')
-def taketest(request):
-    global q_nos
-    q_nos.clear()
-    randlist=random.sample(range(1,40),10)
-    randlist.sort()
-    for i in range(0,10):
-        q_nos.append(randlist[i])
-    print(q_nos)
-    q=models.Aptitude.objects.get(q_id=q_nos[0])
-    return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
+def taketest1(request):
+    # global q_nos
+    # q_nos.clear()
+    # randlist=random.sample(range(1,40),10)
+    # randlist.sort()
+    # for i in range(0,10):
+    #     q_nos.append(randlist[i])
+    # print(q_nos)
+    # q=models.Aptitude.objects.get(q_id=q_nos[0])
+    # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
+    return render(request,'user_app/taketest1.html')
 def predict(request):
     global regressor
     if request.method=='POST':
