@@ -15,22 +15,23 @@ regressor=RandomForestRegressor(n_estimators=50,random_state=0)
 regressor.fit(x_train,y_train)
 
 q_nos=list()
+pointer=0
 
 def home(request):
     return render(request,'user_app/index.html')
 def myform(request):
     return render(request,'user_app/myform.html')
 def taketest1(request):
-    # global q_nos
-    # q_nos.clear()
-    # randlist=random.sample(range(1,40),10)
-    # randlist.sort()
-    # for i in range(0,10):
-    #     q_nos.append(randlist[i])
+     global q_nos
+     q_nos.clear()
+     randlist=random.sample(range(1,40),10)
+     randlist.sort()
+     for i in range(0,10):
+         q_nos.append(randlist[i])
     # print(q_nos)
-    # q=models.Aptitude.objects.get(q_id=q_nos[0])
+     q=models.Aptitude.objects.get(q_id=q_nos[0])
     # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
-    return render(request,'user_app/taketest1.html')
+     return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"apti"})
 def predict(request):
     global regressor
     if request.method=='POST':
@@ -59,17 +60,44 @@ def help(request):
 def showquestion(request):
     global q_nos
     if request.method=='POST':
-        id=int(request.POST['id'])+1
-        q=models.Aptitude.objects.get(q_id=q_nos[id])
-        return render(request,'user_app/taketest.html',{'q':q,'n':id,'qn':id})
-    if request.method=='GET':
-        if ',' in  request.GET['id']:
-            id=request.GET['id'].split(',')
-            id=id[0]
-            id=int(id)
-        else :
-            id=int(request.GET['id'])+1
-        if id==10:
-            id=0
-        q=models.Aptitude.objects.get(q_id=q_nos[id])
-        return render(request,'user_app/taketest.html',{'q':q,'n':id,'qn':id})
+        print(request.POST)
+        print(request.POST['type'])
+        #type=request.POST['type']
+        if request.POST['type']=='apti':
+            qn=int(request.POST['qn'])
+            if qn>=10:
+                 q_nos.clear()
+                 randlist=random.sample(range(1,40),10)
+                 randlist.sort()
+                 for i in range(0,10):
+                     q_nos.append(randlist[i])
+                 q=models.Communication.objects.get(q_id=q_nos[0])
+                 return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm"})
+            else:
+               q=models.Aptitude.objects.get(q_id=q_nos[qn])
+               return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti"})
+        elif  request.POST['type']=='comm':
+            qn=int(request.POST['qn'])
+            if qn>=10:
+                 q_nos.clear()
+                 randlist=random.sample(range(1,40),10)
+                 randlist.sort()
+                 for i in range(0,10):
+                     q_nos.append(randlist[i])
+                 q=models.ProgrammingLogic.objects.get(q_id=q_nos[0])
+                 return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog"})
+            else:
+              q=models.Communication.objects.get(q_id=q_nos[qn])
+              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm"})
+        else:
+            qnn=int(request.POST['qnn'])
+            if qnn>=10:
+                 score=0;
+                 return render(request,'user_app/result.html',{"score":score})
+            else :
+               q=models.ProgrammingLogic.objects.get(q_id=q_nos[qnn])
+               print(q.question)
+               question=q.question.split('$')
+               for x in question :
+                   print(x)
+               return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog"})

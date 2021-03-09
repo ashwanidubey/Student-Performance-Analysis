@@ -48,27 +48,57 @@
     <div id="home" class="container tab-pane active " style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
       <div class="container">
 
-          <form class="" action="" method="">
-            <div class="row">
+        <form class="form-inline my-2 my-lg-0" action="/performance/showquestion/" method="post">
+    			{% csrf_token %}
 
-                <h3>Ques 1.</h3>&nbsp;
-                <h3>What's up?</h3>
-              </div>
+    			<!-- <h3>question : {{q.question}} </h3> -->
+          <input type="hidden" name="type" value={{type}}>
+          <input type="hidden" name="qn" value={{qn}}>
+          <input type="hidden" name="qnn" value={{qnn}}>
+
+          <table style="font-size: 25px; padding:10px; margin-top: 20px;">
+
+              <tr><h1>{{qn}}{{qnn}} &#160;{{q.question}}</h1>
+
+              </tr>
+                {{qqn}} &#160;
+                {%for x in question %}
+                  <tr><h1>{{x}}</h1><br/></tr>
+                {% endfor %}<hr width="0px">
+              <br/>
+              <tr>
+                <h1>(a)<input type="radio" id="arch13" name="a101" value="{{q.opB}}">{{q.opA}}{{qq.opA}}</h1>
+
+              </tr>
+              <br/>
+              <tr>
+                <h1>(b)<input type="radio" id="arch23" name="a102" value="{{q.opB}}">{{q.opA}}{{qq.opB}}</h1>
 
 
-            </div>
-            <ul style="list-style-type: none;">
-              <li><input type="radio" name="" value="">&nbsp; abc</li>
-              <li><input type="radio" name="" value="">&nbsp; dec</li>
-              <li><input type="radio" name="" value="">&nbsp; jan</li>
-              <li><input type="radio" name="" value="">&nbsp; feb</li>
-            </ul>
-            <button type="button" name="button">Submit</button>
-            <button type="button" name="button">Next</button>
 
-          </form>
+              <tr>
+                <h1>(c)  <input type="radio" id="arch33" name="a103" value="{{q.opB}}">{{q.opC}}{{qq.opA}}</h1>
 
-      
+
+              </tr>
+              <tr>
+                <h1>  (d)<input type="radio" id="arch43" name="a104" value="{{q.opB}}">{{q.opD}}{{qq.opD}}</h1>
+
+
+              </tr>
+
+          </table>
+      <center>
+          <div class="container d-flex h-100 ">
+            <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
+
+
+              <button type="submit" class="btn btn-info ">Submit</button>
+          </div>
+          </center>
+    		</form>
+
+
     </div>
     <div id="menu1" class="container tab-pane fade" style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
       <h3>Menu 1</h3>
