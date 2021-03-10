@@ -27,25 +27,43 @@
   <br>
   <!-- Nav pills -->
   <ul class="nav nav-pills" role="tablist">
+    {% if apt %}
     <li class="nav-item">
       <a class="nav-link active" data-toggle="pill" href="#home">Quantitative Aptitude</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu1">Verbal Ability</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu2">Logical Reasoning</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu3">Programming</a>
-    </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="pill" href="#home">Quantitative Aptitude</a>
+      </li>
+      {% endif %}
+      {% if verb %}
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#menu1">Verbal Ability</a>
+      </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " data-toggle="pill" href="#menu1">Verbal Ability</a>
+        </li>
+        {% endif %}
+        {% if prog %}
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="#menu3">Programming</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu3">Programming</a>
+          </li>
+          {% endif %}
+
+
+
   </ul>
   <br>
 
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div id="home" class="container tab-pane active " style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
+
       <div class="container">
 
         <form class="form-inline my-2 my-lg-0" action="/performance/showquestion/" method="post">
@@ -99,6 +117,9 @@
     		</form>
 
 
+    </div>
+
+    <div id="home" class="container tab-pane fade " style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
     </div>
     <div id="menu1" class="container tab-pane fade" style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
       <h3>Menu 1</h3>

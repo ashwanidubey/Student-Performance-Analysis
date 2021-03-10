@@ -31,7 +31,7 @@ def taketest1(request):
     # print(q_nos)
      q=models.Aptitude.objects.get(q_id=q_nos[0])
     # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
-     return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"apti"})
+     return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"apti",'apt':1})
 def predict(request):
     global regressor
     if request.method=='POST':
@@ -72,10 +72,10 @@ def showquestion(request):
                  for i in range(0,10):
                      q_nos.append(randlist[i])
                  q=models.Communication.objects.get(q_id=q_nos[0])
-                 return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm"})
+                 return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2})
             else:
                q=models.Aptitude.objects.get(q_id=q_nos[qn])
-               return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti"})
+               return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1})
         elif  request.POST['type']=='comm':
             qn=int(request.POST['qn'])
             if qn>=10:
@@ -85,10 +85,10 @@ def showquestion(request):
                  for i in range(0,10):
                      q_nos.append(randlist[i])
                  q=models.ProgrammingLogic.objects.get(q_id=q_nos[0])
-                 return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog"})
+                 return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog",'prog':3})
             else:
               q=models.Communication.objects.get(q_id=q_nos[qn])
-              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm"})
+              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2})
         else:
             qnn=int(request.POST['qnn'])
             if qnn>=10:
@@ -100,4 +100,4 @@ def showquestion(request):
                question=q.question.split('$')
                for x in question :
                    print(x)
-               return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog"})
+               return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog",'prog':3})
