@@ -12,7 +12,7 @@
 <body>
 <br>
 
-<div class="container" style="background-color:#dfe6e9; padding-bottom: 400px;  padding-top: 10px;" >
+<div class="container" style="background-color:#dfe6e9; padding-bottom: 200px;  padding-top: 10px;" >
 
   <div class="row">
     <div class="col-lg-9">
@@ -29,29 +29,29 @@
   <ul class="nav nav-pills" role="tablist">
     {% if apt %}
     <li class="nav-item">
-      <a class="nav-link active" data-toggle="pill" href="#home">Quantitative Aptitude</a>
+      <a class="nav-link active" data-toggle="pill" href="" >Quantitative Aptitude</a>
     </li>
       {% else %}
       <li class="nav-item">
-        <a class="nav-link " data-toggle="pill" href="#home">Quantitative Aptitude</a>
+        <a class="nav-link " data-toggle="pill" href="" onclick="check1()">Quantitative Aptitude</a>
       </li>
       {% endif %}
       {% if verb %}
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#menu1">Verbal Ability</a>
+        <a class="nav-link active" data-toggle="pill" href="">Verbal Ability</a>
       </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link " data-toggle="pill" href="#menu1">Verbal Ability</a>
+          <a class="nav-link " data-toggle="pill" href="" onclick="check1()">Verbal Ability</a>
         </li>
         {% endif %}
         {% if prog %}
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="pill" href="#menu3">Programming</a>
+          <a class="nav-link active" data-toggle="pill" href="" >Programming</a>
         </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu3">Programming</a>
+            <a class="nav-link" data-toggle="pill" href="" onclick="check1()">Programming</a>
           </li>
           {% endif %}
 
@@ -64,9 +64,9 @@
   <!-- Tab panes -->
   <div class="tab-content">
 
-      <div class="container">
+      <div class="" style="background-color: #f1e7fe; padding: 30px;">
 
-        <form class="form-inline my-2 my-lg-0" action="/performance/showquestion/" method="post">
+        <form class="" action="/performance/showquestion/" method="post">
     			{% csrf_token %}
 
     			<!-- <h3>question : {{q.question}} </h3> -->
@@ -74,52 +74,65 @@
           <input type="hidden" name="qn" value={{qn}}>
           <input type="hidden" name="qnn" value={{qnn}}>
 
-          <table style="font-size: 25px; padding:10px; margin-top: 20px;">
+          <!-- <div class="row" style="font-size: 25px;">
 
-              <tr><h1>{{qn}}{{qnn}} &#160;{{q.question}}</h1>
+              Ques {{qn}}{{qnn}}   &nbsp; {{q.question}}
+          </div>
 
+          <div>
+          <ul style="list-style-type: none; font-size: 25px; ">
+            <li><input type="radio" name="" value="">&nbsp; {{q.opA}}{{qq.opA}}</li>
+            <li><input type="radio" name="" value="">&nbsp; {{q.opB}}{{qq.opB}}</li>
+            <li><input type="radio" name="" value="">&nbsp; {{q.opC}}{{qq.opC}}</li>
+            <li><input type="radio" name="" value="">&nbsp; {{q.opD}}{{qq.opD}}</li>
+          </ul>
+        </div> -->
+
+  <!-- <div class="row">
+
+          <button type="button" name="button">Submit</button>
+          <button type="button" name="button">Next</button>
+</div> -->
+
+          <table style="font-size: 25px;">
+
+              <tr>
+                <td>Ques. {{qn}}{{qnn}} &#160;{{q.question}}<td>
               </tr>
+
                 {{qqn}} &#160;
                 {%for x in question %}
-                  <tr><h1>{{x}}</h1><br/></tr>
+                    <tr><td>{{x}}</td></tr>
                 {% endfor %}<hr width="0px">
-              <br/>
-              <tr>
-                <h1>(a)<input type="radio" id="arch13" name="a101" value="{{q.opB}}">{{q.opA}}{{qq.opA}}</h1>
-
-              </tr>
-              <br/>
-              <tr>
-                <h1>(b)<input type="radio" id="arch23" name="a102" value="{{q.opB}}">{{q.opA}}{{qq.opB}}</h1>
-
-
 
               <tr>
-                <h1>(c)  <input type="radio" id="arch33" name="a103" value="{{q.opB}}">{{q.opC}}{{qq.opA}}</h1>
-
-
-              </tr>
-              <tr>
-                <h1>  (d)<input type="radio" id="arch43" name="a104" value="{{q.opB}}">{{q.opD}}{{qq.opD}}</h1>
-
-
+                <td><input type="radio" id="arch13" name="a101" value="{{q.opB}}" required> &nbsp; (a) &nbsp; {{q.opA}}{{qq.opA}}</td>
               </tr>
 
-          </table>
-      <center>
-          <div class="container d-flex h-100 ">
-            <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
+              <tr>
+                <td><input type="radio" id="arch23" name="a101" value="{{q.opB}}" required> &nbsp; (b) &nbsp; {{q.opA}}{{qq.opB}}</td>
+              </tr>
+
+              <tr>
+                 <td><input type="radio" id="arch33" name="a101" value="{{q.opB}}" required> &nbsp; (c) &nbsp; {{q.opC}}{{qq.opA}} </td>
+              </tr>
+
+              <tr>
+                 <td>  <input type="radio" id="arch43" name="a101" value="{{q.opB}}" required> &nbsp; (d) &nbsp; {{q.opD}}{{qq.opD}} </td>
+              </tr>
 
 
-              <button type="submit" class="btn btn-info ">Submit</button>
-          </div>
-          </center>
-    		</form>
 
 
-    </div>
 
-    <div id="home" class="container tab-pane fade " style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
+
+
+            <tr><td>  <button type="submit" class="btn btn-info ">Submit</button></td></tr>
+</table>
+
+    </form>
+
+    <!-- <div id="home" class="container tab-pane fade " style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
     </div>
     <div id="menu1" class="container tab-pane fade" style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
       <h3>Menu 1</h3>
@@ -132,9 +145,14 @@
     <div id="menu3" class="container tab-pane fade" style="background-color:#d5b8ff; padding-bottom: 100px;"><br>
       <h3>Menu 2</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
+    </div> -->
   </div>
 </div>
-
+</div>
+<script>
+  function check1(){
+alert('Section navigation is not allowed');
+      }
+</script>
 </body>
 </html>
