@@ -45,7 +45,7 @@
           <a class="nav-link " data-toggle="pill" href="" onclick="check1()">Verbal Ability</a>
         </li>
         {% endif %}
-        {% if prog %}
+        {% if progg %}
         <li class="nav-item">
           <a class="nav-link active" data-toggle="pill" href="" >Programming</a>
         </li>
@@ -73,7 +73,10 @@
           <input type="hidden" name="type" value={{type}}>
           <input type="hidden" name="qn" value={{qn}}>
           <input type="hidden" name="qnn" value={{qnn}}>
-
+          <input type="hidden" name="score" value={{score}}>
+          <input type="hidden" name="apti" value={{apti}}>
+          <input type="hidden" name="prog" value={{prog}}>
+          <input type="hidden" name="comm" value={{comm}}>
           <!-- <div class="row" style="font-size: 25px;">
 
               Ques {{qn}}{{qnn}}   &nbsp; {{q.question}}
@@ -106,19 +109,19 @@
                 {% endfor %}<hr width="0px">
 
               <tr>
-                <td><input type="radio" id="arch13" name="a101" value="{{q.opB}}" required> &nbsp; (a) &nbsp; {{q.opA}}{{qq.opA}}</td>
+                <td><input type="radio" id="arch13" name="op" value="{{q.opA}}" required> &nbsp; (a) &nbsp; {{q.opA}}{{qq.opA}}</td>
               </tr>
 
               <tr>
-                <td><input type="radio" id="arch23" name="a101" value="{{q.opB}}" required> &nbsp; (b) &nbsp; {{q.opA}}{{qq.opB}}</td>
+                <td><input type="radio" id="arch23" name="op" value="{{q.opB}}" required> &nbsp; (b) &nbsp; {{q.opB}}{{qq.opB}}</td>
               </tr>
 
               <tr>
-                 <td><input type="radio" id="arch33" name="a101" value="{{q.opB}}" required> &nbsp; (c) &nbsp; {{q.opC}}{{qq.opA}} </td>
+                 <td><input type="radio" id="arch33" name="op" value="{{q.opC}}" required> &nbsp; (c) &nbsp; {{q.opC}}{{qq.opC}} </td>
               </tr>
 
               <tr>
-                 <td>  <input type="radio" id="arch43" name="a101" value="{{q.opB}}" required> &nbsp; (d) &nbsp; {{q.opD}}{{qq.opD}} </td>
+                 <td>  <input type="radio" id="arch43" name="op" value="{{q.opD}}" required> &nbsp; (d) &nbsp; {{q.opD}}{{qq.opD}} </td>
               </tr>
 
 
