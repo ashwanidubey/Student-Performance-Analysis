@@ -31,6 +31,7 @@ def taketest1(request):
     # print(q_nos)
      q=models.Aptitude.objects.get(q_id=q_nos[0])
     # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
+     print("answer"+q.answer)
      return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"apti",'apt':1,'score':0,'prog':0,'comm':0,'apti':0})
 def predict(request):
     global regressor
@@ -60,7 +61,7 @@ def help(request):
 def showquestion(request):
     global q_nos
     if request.method=='POST':
-        #print(request.POST)
+        print(request.POST)
         #print(request.POST['type'])
         #type=request.POST['type']
         if request.POST['type']=='apti':
@@ -70,15 +71,14 @@ def showquestion(request):
             apti=int(request.POST['apti'])
             comm=int(request.POST['comm'])
             op=str(request.POST['op'])
-            qp=models.Aptitude.objects.get(q_id=q_nos[qn-1])
-            answer=str(qp.answer)
+            answer=str(request.POST['answer'])
             if op==answer:
                 print("jai ho")
                 score+=1
                 apti+=1
             print(answer)
             print(op)
-            print(score)
+            print("score ",score)
             if qn>=10:
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -86,12 +86,12 @@ def showquestion(request):
                  for i in range(0,10):
                      q_nos.append(randlist[i])
                  q=models.Communication.objects.get(q_id=q_nos[0])
+                 print("answer "+q.answer)
                  return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti})
             else:
-               q=models.Aptitude.objects.get(q_id=q_nos[qn])
-
-
-               return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1,'score':score,'prog':prog,'comm':comm,'apti':apti})
+                q=models.Aptitude.objects.get(q_id=q_nos[qn])
+                print("answer "+q.answer)
+                return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1,'score':score,'prog':prog,'comm':comm,'apti':apti})
         elif  request.POST['type']=='comm':
             qn=int(request.POST['qn'])
             score=int(request.POST['score'])
@@ -99,11 +99,13 @@ def showquestion(request):
             comm=int(request.POST['comm'])
             apti=int(request.POST['apti'])
             op=str(request.POST['op'])
-            qp=models.Aptitude.objects.get(q_id=q_nos[qn-1])
-            answer=str(qp.answer)
+            answer=str(request.POST['answer'])
             if op==answer:
                 score+=1
                 comm+=1
+            print(op)
+            print(answer)
+            print(comm)
             if qn>=10:
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -114,11 +116,13 @@ def showquestion(request):
                  question=q.question.split('$')
                  for x in question :
                       print(x)
+                 print("answer "+q.answer)
                  return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti})
                   #return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog",'prog':3})
             else:
               q=models.Communication.objects.get(q_id=q_nos[qn])
-              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti})
+              print("answer "+q.answer)
+              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'answer':q.answer})
         else:
             qnn=int(request.POST['qnn'])
             score=int(request.POST['score'])
@@ -126,19 +130,17 @@ def showquestion(request):
             prog=int(request.POST['prog'])
             comm=int(request.POST['comm'])
             op=str(request.POST['op'])
-            qp=models.Aptitude.objects.get(q_id=q_nos[qnn-1])
-            answer=str(qp.answer)
+            answer=str(request.POST['answer'])
             if op==answer:
                 score+=1
                 prog+=1
-
+            print(op)
+            print(answer)
+            print(prog)
             if qnn>=10:
-
                  return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'apti':apti})
             else :
                q=models.ProgrammingLogic.objects.get(q_id=q_nos[qnn])
-               print(q.question)
                question=q.question.split('$')
-               for x in question :
-                   print(x)
+               print("answer "+q.answer)
                return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti})
