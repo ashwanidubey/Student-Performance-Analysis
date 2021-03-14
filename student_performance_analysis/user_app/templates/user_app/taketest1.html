@@ -77,7 +77,7 @@
           <input type="hidden" name="apti" value={{apti}}>
           <input type="hidden" name="prog" value={{prog}}>
           <input type="hidden" name="comm" value={{comm}}>
-          <input type="hidden" name="answer" value="{{q.answer}}">
+          <input type="hidden" name="answer" value="{{q.answer}}{{qq.answer}}">
           <!-- <div class="row" style="font-size: 25px;">
 
               Ques {{qn}}{{qnn}}   &nbsp; {{q.question}}
@@ -110,19 +110,19 @@
                 {% endfor %}<hr width="0px">
 
               <tr>
-                <td><input type="radio" id="arch13" name="op" value="{{q.opA}}" required> &nbsp; (a) &nbsp; {{q.opA}}{{qq.opA}}</td>
+                <td><input type="radio" id="arch13" name="op" value="{{q.opA}}{{qq.opA}}" required> &nbsp; (a) &nbsp; {{q.opA}}{{qq.opA}}</td>
               </tr>
 
               <tr>
-                <td><input type="radio" id="arch23" name="op" value="{{q.opB}}" required> &nbsp; (b) &nbsp; {{q.opB}}{{qq.opB}}</td>
+                <td><input type="radio" id="arch23" name="op" value="{{q.opB}}{{qq.opB}}" required> &nbsp; (b) &nbsp; {{q.opB}}{{qq.opB}}</td>
               </tr>
 
               <tr>
-                 <td><input type="radio" id="arch33" name="op" value="{{q.opC}}" required> &nbsp; (c) &nbsp; {{q.opC}}{{qq.opC}} </td>
+                 <td><input type="radio" id="arch33" name="op" value="{{q.opC}}{{qq.opC}}" required> &nbsp; (c) &nbsp; {{q.opC}}{{qq.opC}} </td>
               </tr>
 
               <tr>
-                 <td>  <input type="radio" id="arch43" name="op" value="{{q.opD}}" required> &nbsp; (d) &nbsp; {{q.opD}}{{qq.opD}} </td>
+                 <td>  <input type="radio" id="arch43" name="op" value="{{q.opD}}{{qq.opD}}" required> &nbsp; (d) &nbsp; {{q.opD}}{{qq.opD}} </td>
               </tr>
 
 
