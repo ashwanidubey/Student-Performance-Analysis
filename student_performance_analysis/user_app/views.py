@@ -16,7 +16,10 @@ regressor.fit(x_train,y_train)
 
 q_nos=list()
 pointer=0
-
+def addc(request):
+    q=models.ProgrammingLogic(q_id=31,question="q",opA="a",opB="b",opC="c",opD="d",answer="answer")
+    q.save()
+    return render(request,'user_app/index.html')
 def home(request):
     return render(request,'user_app/index.html')
 def myform(request):
@@ -85,10 +88,14 @@ def showquestion(request):
                  randlist.sort()
                  for i in range(0,10):
                      q_nos.append(randlist[i])
+                 print(0)
+                 print(q_nos[0])
                  q=models.Communication.objects.get(q_id=q_nos[0])
                  print("answer "+q.answer)
                  return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti})
             else:
+                print(qn)
+                print(q_nos[qn])
                 q=models.Aptitude.objects.get(q_id=q_nos[qn])
                 print("answer "+q.answer)
                 return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1,'score':score,'prog':prog,'comm':comm,'apti':apti})
@@ -112,14 +119,16 @@ def showquestion(request):
                  randlist.sort()
                  for i in range(0,10):
                      q_nos.append(randlist[i])
+                 print(0)
+                 print(q_nos[0])
                  q=models.ProgrammingLogic.objects.get(q_id=q_nos[0])
                  question=q.question.split('$')
-                 for x in question :
-                      print(x)
                  print("answer "+q.answer)
                  return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti})
                   #return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog",'prog':3})
             else:
+              print(qn)
+              print(q_nos[qn])
               q=models.Communication.objects.get(q_id=q_nos[qn])
               print("answer "+q.answer)
               return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'answer':q.answer})
@@ -140,6 +149,8 @@ def showquestion(request):
             if qnn>=10:
                  return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'apti':apti})
             else :
+               print(qnn)
+               print(q_nos[qnn])
                q=models.ProgrammingLogic.objects.get(q_id=q_nos[qnn])
                question=q.question.split('$')
                print("answer "+q.answer)

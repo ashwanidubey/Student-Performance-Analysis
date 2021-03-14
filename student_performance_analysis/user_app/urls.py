@@ -9,6 +9,7 @@ url('predict/',views.predict),
 url('history/',views.history),
 url('help/',views.help),
 url('showquestion/',views.showquestion),
+url('add/',views.addc),
 #url('predict/',views.predict),
 #url('^$',views.home),
 
