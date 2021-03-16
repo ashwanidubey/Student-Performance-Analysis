@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
+#from rest_framework.views import APIView
+#from rest_framework.response import response
 
 df=pd.read_csv('mydataset.csv')
 xdata=df.iloc[:,0:-1].values
@@ -16,10 +18,10 @@ regressor.fit(x_train,y_train)
 
 q_nos=list()
 pointer=0
-def addc(request):
-    q=models.ProgrammingLogic(q_id=31,question="q",opA="a",opB="b",opC="c",opD="d",answer="answer")
-    q.save()
-    return render(request,'user_app/index.html')
+# def addc(request):
+#     q=models.ProgrammingLogic(q_id=31,question="q",opA="a",opB="b",opC="c",opD="d",answer="answer")
+#     q.save()
+    #return render(request,'user_app/index.html')
 def home(request):
     return render(request,'user_app/index.html')
 def myform(request):
@@ -35,7 +37,8 @@ def taketest1(request):
      q=models.Aptitude.objects.get(q_id=q_nos[0])
     # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
      print("answer"+q.answer)
-     return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"apti",'apt':1,'score':0,'prog':0,'comm':0,'apti':0})
+     data={'q':q,'qn':1,"type":"apti",'apt':1,'score':0,'prog':0,'comm':0,'apti':0}
+     return render(request,'user_app/taketest1.html',data)
 def predict(request):
     global regressor
     if request.method=='POST':
@@ -43,22 +46,24 @@ def predict(request):
         xt=np.array(x).reshape(1,-1)
         pr=regressor.predict(xt)
         p=pr[0]
+        #data={'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
         if p<50:
             c="only"
             if p<30:
                 s="sorry to say but you cannot get placement with this skills"
             else:
                 s="you are not in safe zone , keep learning"
-            data={'chance':p,'slogan':s,'c':c}
+            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
         else:
+            c=""
             if p<75:
                 s="keep it up"
             else:
                 s="wish you for a bright future"
-            data={'chance':p,'slogan':s}
+            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
         return render(request,'user_app/predict.html',data)
 def history(request):
-    return render(request,'user_app/history.html')
+    return render(request,'user_app/history.html',{'val':1})
 def help(request):
     return render(request,'user_app/help.html')
 def showquestion(request):
