@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',#step1 for graph
+    # 'rest_framework',#step1 for graph
     'user_app',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -7,21 +7,69 @@
   </head>
     <title></title>
   </head>
-  <body>
-    <div class="container">
+  <body >
+    <div class="text-center">
+
+    <h1 class="container">WELCOME TO STUDENT PERFORMANCE ANALYSER </h1>
+  </div>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/home/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/history/">about<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/help/">Help<span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+</div>
+<br><br>
+    <!-- <div class="container">
   <div class="row">
     <div class="col">A</div>
     <div class="col">B</div>
     <div class="w-100"></div>
     <div class="col">C</div>
     <div class="col">D</div>
+  </div> 
+
+</div> -->
+
+<div class="container" style="margin-top:30px">
+  <div class="row" style="margin-bottom: 50px; padding-bottom:20px;">
+
+    <div class="col-lg-12" style="background-color: rgb(240, 169, 201); padding: 20px; border-radius: 20px;">
+<center>
+  <h1 style="background-color: rgb(140, 141, 146); border-radius: 20px;">You score is : {{score}}</h1>
+</center>
+
+      <br>
+      <h1>Aptitude : {{apti}}</h1>
+    <h1>Programming : {{prog}}</h1>
+    <h1>Communication : {{comm}}</h1>
+    
+      <br>
+     
+
+
+    </div>
   </div>
 </div>
-    <h1>aptitude:{{apti}}</h1>
-    <h1>programming:{{prog}}</h1>
-    <h1>communication:{{comm}}</h1>
-    <h1>score:{{score}}</h1>
-    <button type="button" name="button">continue</button>
+
+    <div class="container" style="margin-left: 1200px;">
+      <button type="button" name="button" class="btn btn-info">continue</button>
+    </div>
+    
 
   </body>
 </html>

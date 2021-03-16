@@ -4,16 +4,52 @@
 
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <h1>there is {{c}} chance of  {{chance}}  % to placed</h1>
-    <p>{{slogan}}</p>
+    <div class="text-center">
+<br>
+    <h1 class="container">WELCOME TO STUDENT PERFORMANCE ANALYSER </h1>
+  </div>
+  <br>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/home/" style="color: cornsilk;">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/history/"style="color: cornsilk;">about<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/performance/help/" style="color: cornsilk;">Help<span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+</div>
+<br><br>
+
+<div class="jumbotron text-center" style="margin: 10px 150px; padding:30px; background-color: rgb(178, 75, 199);">
+  <h1><div class="spinner-border text-info"></div> &nbsp; There is {{c}} chance of  {{chance}}  % to placed</h1>
+  <p>{{slogan}}</p>
+</div>
+    <!-- <h1>there is {{c}} chance of  {{chance}}  % to placed</h1>
+    <p>{{slogan}}</p> -->
   <h1 id="info" coding={{coding}} aptitude={{aptitude}} technical={{technical}} communication={{communication}} core={{core}} presentation={{presentation}} academics={{academics}} puzzel={{puzzel}} english={{english}} programming={{programming}} management={{management}} projects={{projects}} internship={{internship}} training={{training}} backlog={{backlog}}></h1>
-  <canvas id="myChart" width="1300" height="600"></canvas>
-  </body>
+  
+  <canvas style="margin-left: 150px; margin-bottom: 100px; margin-top: 50px;" id="myChart" width="1200" height="600"></canvas>
+  
   <script src="{% static 'user_app/chart.js' %}"></script>
   <script src="{% static 'user_app/index.js' %}"></script>
+</body>
 </html>
 <!--<html lang="en" dir="ltr">
   <head>
