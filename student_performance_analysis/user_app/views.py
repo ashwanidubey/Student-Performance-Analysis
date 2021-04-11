@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
+from datetime import datetime ,timedelta
 #from rest_framework.views import APIView
 #from rest_framework.response import response
 
@@ -29,6 +30,12 @@ def myform(request):
 def taketest1(request):
      global q_nos
      q_nos.clear()
+     start_time=datetime.now()
+     end_time= start_time + timedelta(minutes = 1)
+     difference_time=str(end_time-start_time).split(":")
+     print("jai ho",difference_time)
+     print("jai ho",difference_time[1])
+     print("jai ho",difference_time[2])
      randlist=random.sample(range(1,40),10)
      randlist.sort()
      for i in range(0,10):
@@ -37,7 +44,7 @@ def taketest1(request):
      q=models.Aptitude.objects.get(q_id=q_nos[0])
     # return render(request,'user_app/taketest.html',{'q':q,'n':0,'qn':1})
      print("answer"+q.answer)
-     data={'q':q,'qn':1,"type":"apti",'apt':1,'score':0,'prog':0,'comm':0,'apti':0}
+     data={'q':q,'qn':1,"type":"apti",'apt':1,'score':0,'prog':0,'comm':0,'apti':0,'year':end_time.year,'month':end_time.month,'day':end_time.day,'hour':end_time.hour,'minute':end_time.minute,'second':end_time.second,'pm':difference_time[1],'ps':difference_time[2]}
      return render(request,'user_app/taketest1.html',data)
 def predict(request):
     global regressor
@@ -73,6 +80,24 @@ def showquestion(request):
         #print(request.POST['type'])
         #type=request.POST['type']
         if request.POST['type']=='apti':
+           if request.POST['timesup']=='1':
+               score=int(request.POST['score'])
+               prog=int(request.POST['prog'])
+               apti=int(request.POST['apti'])
+               comm=int(request.POST['comm'])
+               start_time=datetime.now()
+               end_time= start_time + timedelta(minutes = 1)
+               difference_time=str(end_time-start_time).split(":")
+               q_nos.clear()
+               randlist=random.sample(range(1,40),10)
+               randlist.sort()
+               for i in range(0,10):
+                   q_nos.append(randlist[i])
+               print(0)
+               print(q_nos[0])
+               q=models.Communication.objects.get(q_id=q_nos[0])
+               return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':end_time.year,'month':end_time.month,'day':end_time.day,'hour':end_time.hour,'minute':end_time.minute,'second':end_time.second,'pm':difference_time[1],'ps':difference_time[2]})
+           else :
             qn=int(request.POST['qn'])
             score=int(request.POST['score'])
             prog=int(request.POST['prog'])
@@ -88,6 +113,9 @@ def showquestion(request):
             print(op)
             print("score ",score)
             if qn>=10:
+                 start_time=datetime.now()
+                 end_time= start_time + timedelta(minutes = 1)
+                 difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
                  randlist.sort()
@@ -96,15 +124,44 @@ def showquestion(request):
                  print(0)
                  print(q_nos[0])
                  q=models.Communication.objects.get(q_id=q_nos[0])
-                 print("answer "+q.answer)
-                 return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti})
+                 print("line n0 109 answer ",end_time.year,end_time.month,end_time.day,end_time.hour,end_time.minute,end_time.second)
+                 return render(request,'user_app/taketest1.html',{'q':q,'qn':1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':end_time.year,'month':end_time.month,'day':end_time.day,'hour':end_time.hour,'minute':end_time.minute,'second':end_time.second,'pm':difference_time[1],'ps':difference_time[2]})
             else:
                 print(qn)
                 print(q_nos[qn])
+                year=request.POST['year']
+                month=request.POST['month']
+                day=request.POST['day']
+                hour=request.POST['hour']
+                minute=request.POST['minute']
+                second=request.POST['second']
+                start_time=datetime.now()
+                end_time= datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
+                difference_time=str(end_time-start_time).split(":")
                 q=models.Aptitude.objects.get(q_id=q_nos[qn])
                 print("answer "+q.answer)
-                return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1,'score':score,'prog':prog,'comm':comm,'apti':apti})
+                return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"apti",'apt':1,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':year,'month':month,'day':day,'hour':hour,'minute':minute,'second':second,'pm':difference_time[1],'ps':difference_time[2].split(".")[0]})
+
+
         elif  request.POST['type']=='comm':
+          if request.POST['timesup']=='1':
+              score=int(request.POST['score'])
+              prog=int(request.POST['prog'])
+              comm=int(request.POST['comm'])
+              apti=int(request.POST['apti'])
+              start_time=datetime.now()
+              end_time= start_time + timedelta(minutes = 1)
+              difference_time=str(end_time-start_time).split(":")
+              q_nos.clear()
+              randlist=random.sample(range(1,40),10)
+              randlist.sort()
+              for i in range(0,10):
+                  q_nos.append(randlist[i])
+              q=models.ProgrammingLogic.objects.get(q_id=q_nos[0])
+              question=q.question.split('$')
+              return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':end_time.year,'month':end_time.month,'day':end_time.day,'hour':end_time.hour,'minute':end_time.minute,'second':end_time.second,'pm':difference_time[1],'ps':difference_time[2]})
+                #return render(request,'user_app/taketest1.h
+          else:
             qn=int(request.POST['qn'])
             score=int(request.POST['score'])
             prog=int(request.POST['prog'])
@@ -119,6 +176,9 @@ def showquestion(request):
             print(answer)
             print(comm)
             if qn>=10:
+                 start_time=datetime.now()
+                 end_time= start_time + timedelta(minutes = 1)
+                 difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
                  randlist.sort()
@@ -128,16 +188,36 @@ def showquestion(request):
                  print(q_nos[0])
                  q=models.ProgrammingLogic.objects.get(q_id=q_nos[0])
                  question=q.question.split('$')
-                 print("answer "+q.answer)
-                 return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti})
+                 print("line no 153",end_time.year,end_time.hour)
+                 return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':end_time.year,'month':end_time.month,'day':end_time.day,'hour':end_time.hour,'minute':end_time.minute,'second':end_time.second,'pm':difference_time[1],'ps':difference_time[2]})
                   #return render(request,'user_app/taketest1.html',{'q':q,'qnn':1,"type":"prog",'prog':3})
             else:
               print(qn)
               print(q_nos[qn])
+              year=request.POST['year']
+              month=request.POST['month']
+              day=request.POST['day']
+              hour=request.POST['hour']
+              minute=request.POST['minute']
+              second=request.POST['second']
+              start_time=datetime.now()
+              print("line np 166 ",int(year),int(month),int(day),int(hour),int(minute),int(second))
+              end_time= datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
+              #end_time=datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
+
+              difference_time=str(end_time-start_time).split(":")
               q=models.Communication.objects.get(q_id=q_nos[qn])
               print("answer "+q.answer)
-              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'answer':q.answer})
+              return render(request,'user_app/taketest1.html',{'q':q,'qn':qn+1,"type":"comm",'verb':2,'score':score,'prog':prog,'comm':comm,'apti':apti,'answer':q.answer,'year':year,'month':month,'day':day,'hour':hour,'minute':minute,'second':second,'pm':difference_time[1],'ps':difference_time[2].split(".")[0]})
         else:
+          if request.POST['timesup']=='1':
+              score=int(request.POST['score'])
+              apti=int(request.POST['apti'])
+              prog=int(request.POST['prog'])
+              comm=int(request.POST['comm'])
+              return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'apti':apti})
+
+          else:
             qnn=int(request.POST['qnn'])
             score=int(request.POST['score'])
             apti=int(request.POST['apti'])
@@ -154,9 +234,18 @@ def showquestion(request):
             if qnn>=10:
                  return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'apti':apti})
             else :
+               year=request.POST['year']
+               month=request.POST['month']
+               day=request.POST['day']
+               hour=request.POST['hour']
+               minute=request.POST['minute']
+               second=request.POST['second']
+               start_time=datetime.now()
+               end_time=datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
+               difference_time=str(end_time-start_time).split(":")
                print(qnn)
                print(q_nos[qnn])
                q=models.ProgrammingLogic.objects.get(q_id=q_nos[qnn])
                question=q.question.split('$')
                print("answer "+q.answer)
-               return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti})
+               return render(request,'user_app/taketest1.html',{'question':question,'qq':q,'qnn':qnn+1,"type":"prog",'progg':3,'score':score,'prog':prog,'comm':comm,'apti':apti,'year':year,'month':month,'day':day,'hour':hour,'minute':minute,'second':second,'pm':difference_time[1],'ps':difference_time[2].split(".")[0]})

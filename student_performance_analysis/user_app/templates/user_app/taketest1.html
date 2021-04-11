@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
   <title>Take Test</title>
@@ -12,20 +13,21 @@
 <body>
 <br>
 
-<div class="container" style="background-color:#dfe6e9; padding-bottom: 200px;  padding-top: 10px;" >
+<div class="container" style="background-color:#dfe6e9; padding-bottom: 200px;  padding-top: 10px;" id="mr_shown" >
 
   <div class="row">
     <div class="col-lg-9">
       <h4>Attempt all questions</h4>
     </div>
     <div class="col-lg-3">
-      <h2>Timer : </h2>
+      <h2 id='difference'  year="{{year}}" month="{{month}}" day={{day}} hour="{{hour}}" minute="{{minute}}" second="{{second}}">min: {{pm}} sec:{{ps}}</h2>
+
+
     </div>
 
 
   </div>
   <br>
-  <!-- Nav pills -->
   <ul class="nav nav-pills" role="tablist">
     {% if apt %}
     <li class="nav-item">
@@ -70,6 +72,12 @@
     			{% csrf_token %}
 
     			<!-- <h3>question : {{q.question}} </h3> -->
+          <input type="hidden" name="year" value={{year}}>
+          <input type="hidden" name="month" value={{month}}>
+          <input type="hidden" name="day" value={{day}}>
+          <input type="hidden" name="hour" value={{hour}}>
+          <input type="hidden" name="minute" value={{minute}}>
+          <input type="hidden" name="second" value={{second}}>
           <input type="hidden" name="type" value={{type}}>
           <input type="hidden" name="qn" value={{qn}}>
           <input type="hidden" name="qnn" value={{qnn}}>
@@ -77,8 +85,9 @@
           <input type="hidden" name="apti" value={{apti}}>
           <input type="hidden" name="prog" value={{prog}}>
           <input type="hidden" name="comm" value={{comm}}>
+          <input type="hidden" name="timesup" value=0>
           <input type="hidden" name="answer" value="{{q.answer}}{{qq.answer}}">
-          
+
           <!-- <div class="row" style="font-size: 25px;">
 
               Ques {{qn}}{{qnn}}   &nbsp; {{q.question}}
@@ -154,10 +163,34 @@
   </div>
 </div>
 </div>
+<div id="mr_hidden" style="display:none;">
+  <h1>i am mr hidden click submitt</h1>
+  <form class="" action="/performance/showquestion/" method="post">
+    {% csrf_token %}
+
+    <!-- <h3>question : {{q.question}} </h3> -->
+    <input type="hidden" name="year" value={{year}}>
+    <input type="hidden" name="month" value={{month}}>
+    <input type="hidden" name="day" value={{day}}>
+    <input type="hidden" name="hour" value={{hour}}>
+    <input type="hidden" name="minute" value={{minute}}>
+    <input type="hidden" name="second" value={{second}}>
+    <input type="hidden" name="type" value={{type}}>
+    <input type="hidden" name="qn" value={{qn}}>
+    <input type="hidden" name="qnn" value={{qnn}}>
+    <input type="hidden" name="score" value={{score}}>
+    <input type="hidden" name="apti" value={{apti}}>
+    <input type="hidden" name="prog" value={{prog}}>
+    <input type="hidden" name="comm" value={{comm}}>
+    <input type="hidden" name="timesup" value=1>
+     <button type="submit" class="btn btn-info ">submitt </button></td></tr>
+</form>
+</div>
 <script>
   function check1(){
 alert('Section navigation is not allowed');
       }
 </script>
+<script src="{% static 'user_app/javascript/timer.js' %}"></script>
 </body>
 </html>
