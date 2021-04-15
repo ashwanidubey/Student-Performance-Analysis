@@ -28,7 +28,7 @@
 
   </div>
   <br>
-  <ul class="nav nav-pills" role="tablist">
+  <!-- <ul class="nav nav-pills" role="tablist">
     {% if apt %}
     <li class="nav-item">
       <a class="nav-link active" data-toggle="pill" href="" >Quantitative Aptitude</a>
@@ -57,9 +57,41 @@
           </li>
           {% endif %}
 
+          {% if reas %}
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="" >Puzzle Solving</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="" onclick="check1()">Puzzle Solving</a>
+          </li>
+          {% endif %}
 
 
-  </ul>
+          {% if mgmt %}
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="pill" href="" >Management Skills</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="" onclick="check1()">Management Skills</a>
+          </li>
+          {% endif %}
+
+
+
+
+  </ul> -->
+  <div class="panel panel-warning">
+    <div class="row">
+      <div class="col-md-2" style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px; border-radius: 10px;">Quantitative Aptitude</div>
+      <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Verbal Ability</div>
+      <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Programming</div>
+      <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Puzzle Solving</div>
+      <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Management Skills</div>
+    </div>
+   
+  </div>
   <br>
 
 
