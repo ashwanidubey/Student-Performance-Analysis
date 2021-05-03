@@ -47,6 +47,9 @@ class Management(models.Model):
     opB=models.CharField(max_length=100)
     opC=models.CharField(max_length=100)
     opD=models.CharField(max_length=100)
-    answer=models.CharField(max_length=100)
+    answerA=models.CharField(max_length=100)
+    answerB=models.CharField(max_length=100)
+    answerC=models.CharField(max_length=100)
+    answerD=models.CharField(max_length=100)
     def __str__(self):
         return "question no : "+str(self.q_id)
