@@ -7,152 +7,15 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- <script>
- $(document).ready(function(){
-  $(".ab").keyup(function() {
-   if($(".ab").val()<0 || $(".ab").val()>100 ){
-       // $('#errorMsg').show();
-       alert("Input must be in between 0 to 100");
-   }
-   // else{
-   // $('#errorMsg').hide();
-   // }
-   });
-   $(".ab1").keyup(function() {
-    if($(".ab1").val()<0 || $(".ab1").val()>100 ){
-        // $('#errorMsg').show();
-        alert("Input must be in between 0 to 100");
-    }
-    // else{
-    // $('#errorMsg').hide();
-    // }
-    });
-    $(".ab2").keyup(function() {
-     if($(".ab2").val()<0 || $(".ab2").val()>100 ){
-         // $('#errorMsg').show();
-         alert("Input must be in between 0 to 100");
-     }
-     // else{
-     // $('#errorMsg').hide();
-     // }
-     });
-     $(".ab3").keyup(function() {
-      if($(".ab3").val()<0 || $(".ab3").val()>100 ){
-          // $('#errorMsg').show();
-          alert("Input must be in between 0 to 100");
-      }
-      // else{
-      // $('#errorMsg').hide();
-      // }
-      });
-      $(".ab4").keyup(function() {
-       if($(".ab4").val()<0 || $(".ab4").val()>100 ){
-           // $('#errorMsg').show();
-           alert("Input must be in between 0 to 100");
-       }
-       // else{
-       // $('#errorMsg').hide();
-       // }
-       });
-       $(".ab5").keyup(function() {
-        if($(".ab5").val()<0 || $(".ab5").val()>100 ){
-            // $('#errorMsg').show();
-            alert("Input must be in between 0 to 100");
-        }
-        // else{
-        // $('#errorMsg').hide();
-        // }
-        });
-        $(".ab6").keyup(function() {
-         if($(".ab6").val()<0 || $(".ab6").val()>100 ){
-             // $('#errorMsg').show();
-             alert("Input must be in between 0 to 100");
-         }
-         // else{
-         // $('#errorMsg').hide();
-         // }
-         });
-         $(".ab7").keyup(function() {
-          if($(".ab7").val()<0 || $(".ab7").val()>100 ){
-              // $('#errorMsg').show();
-              alert("Input must be in between 0 to 100");
-          }
-          // else{
-          // $('#errorMsg').hide();
-          // }
-          });
-          $(".ab8").keyup(function() {
-           if($(".ab8").val()<0 || $(".ab8").val()>100 ){
-               // $('#errorMsg').show();
-               alert("Input must be in between 0 to 100");
-           }
-           // else{
-           // $('#errorMsg').hide();
-           // }
-           });
-           $(".ab9").keyup(function() {
-            if($(".ab9").val()<0 || $(".ab9").val()>100 ){
-                // $('#errorMsg').show();
-                alert("Input must be in between 0 to 100");
-            }
-            // else{
-            // $('#errorMsg').hide();
-            // }
-            });
-            $(".ab10").keyup(function() {
-             if($(".ab10").val()<0 || $(".ab10").val()>100 ){
-                 // $('#errorMsg').show();
-                 alert("Input must be in between 0 to 100");
-             }
-             // else{
-             // $('#errorMsg').hide();
-             // }
-             });
-             $(".ab11").keyup(function() {
-              if($(".ab11").val()<0 || $(".ab11").val()>100 ){
-                  // $('#errorMsg').show();
-                  alert("Input must be in between 0 to 100");
-              }
-              // else{
-              // $('#errorMsg').hide();
-              // }
-              });
-              $(".ab12").keyup(function() {
-               if($(".ab12").val()<0 || $(".ab12").val()>100 ){
-                   // $('#errorMsg').show();
-                   alert("Input must be in between 0 to 100");
-               }
-               // else{
-               // $('#errorMsg').hide();
-               // }
-               });
-               $(".ab13").keyup(function() {
-                if($(".ab13").val()<0 || $(".ab13").val()>100 ){
-                    // $('#errorMsg').show();
-                    alert("Input must be in between 0 to 100");
-                }
-                // else{
-                // $('#errorMsg').hide();
-                // }
-                });
-                $(".ab14").keyup(function() {
-                 if($(".ab14").val()<0 || $(".ab14").val()>100 ){
-                     // $('#errorMsg').show();
-                     alert("Input must be in between 0 to 100");
-                 }
-                 // else{
-                 // $('#errorMsg').hide();
-                 // }
-                 });
-});
-</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'user_app/javascript/hidden.js' %}"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   </head>
 
   <body style="background-image: url({% static 'user_app/hero-bg.jpg' %}); background-size:100% ;background-repeat:repeat;" >
+      <h1 id="info"  signl={{signal}} apti={{apti}}  prog={{prog}} comm={{comm}} puzz={{puzz}} manage={{manage}}      >1{{signal}}</h1>
       <div class="text-center">
 
       <h1 class="container">WELCOME TO STUDENT PERFORMANCE ANALYSER </h1>
@@ -162,6 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
+
           <a class="nav-link" href="/performance/home/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
@@ -184,41 +48,158 @@
 
     <h3 class="container">ENTER YOUR DETAILS..... </h3>
   </div>
+    {% if signal %}
     <form  method="post" action="/performance/predict/" >
        {% csrf_token %}
       <br>
-  <!-- <div class="form-row">
-
-  <div class="form-group col-md-6">
-    <label for="inputEmail3" class="col-sm-6 col-form-label">Email</label>
-    <div class="col-sm-12">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="youremail">
-    </div>
-  </div>
-
-  <div class="form-group col-md-6">
-    <label for="inputName" class="col-sm-6 col-form-label">Name</label>
-    <div class="col-sm-12">
-      <input type="text" class="form-control" id="inputName" placeholder="Your name" name="yourname">
-    </div>
-  </div>
-
-</div> -->
 <div class="form-row">
   <div class="form-group col-md-6">
     <label for="1a" class="col-sm-6 col-form-label">Coding Skills</label>
     <div class="col-sm-12">
       <input type="number" class="form-control ab" id="1a" placeholder="In percentage" name="coding" required>
-      <!-- <span id="errorMsg" style="display:none;">you can give score -10 to +10 only</span> -->
+
+
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <div class="col-sm-12">
+
+
+      <input type="hidden" value={{apti}}>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="3a" class="col-sm-6 col-form-label">Technical Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab2" id="3a" placeholder="In percentage" name="technical" required>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+
+    <div class="col-sm-12">
+      <input type="hidden" value={{comm}}>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="5a" class="col-sm-6 col-form-label">Presentation Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab4" id="5a" placeholder="In percentage" name="presentation" required>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="6a" class="col-sm-6 col-form-label">Academic Performance</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab5" id="6a" placeholder="In percentage" name="academics" required>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+
+    <div class="col-sm-12">
+      <input type="hidden" value={{puzz}} >
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="8a" class="col-sm-6 col-form-label">English Proficiency</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab7" id="8a" placeholder="In percentage" name="english" required>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+
+    <div class="col-sm-12">
+      <input type="hidden" value={{prog}}>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+
+    <div class="col-sm-12">
+      <input type="hidden"  value={{manage}}>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="11a" class="col-sm-6 col-form-label">Projects</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab10" id="11a" placeholder="In percentage" name="projects" required>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="12a" class="col-sm-6 col-form-label">Internships</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab11" id="12a" placeholder="In percentage" name="internship" required>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="13a" class="col-sm-6 col-form-label">Training</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab12" id="13a" placeholder="In percentage" name="training" required>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="14a" class="col-sm-6 col-form-label">Backlogs</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab13" id="14a" placeholder="In percentage" name="backlog" required>
+    </div>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="15a" class="col-sm-6 col-form-label">Core Knowledge</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab14" id="15a" placeholder="In percentage" name="core" required>
+    </div>
+  </div>
+
+</div>
+<center>
+<div class="container d-flex h-100 ">
+  <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
+
+    <button type="button" onclick="location.href = '/performance/home/';" class="btn btn-info ">Back</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-info ">Predict</button>
+
+<!--</div>-->
+</div>
+</center>
+</form>
+    {% else %}
+    <form  method="post" action="/performance/predict/" >
+       {% csrf_token %}
+      <br>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="1a" class="col-sm-6 col-form-label">Coding Skills</label>
+    <div class="col-sm-12">
+      <input type="number" class="form-control ab" id="1a" placeholder="In percentage" name="coding" required>
+
 
     </div>
   </div>
   <div class="form-group col-md-6">
     <label for="2a" class="col-sm-6 col-form-label">Aptitude Skills</label>
     <div class="col-sm-12">
-      <input type="number" class="form-control ab1" id="2a" placeholder="In percentage" name="aptitude" required>
-      <!-- <span id="errorMsg" style="display:none;">you can give score -10 to +10 only</span> -->
 
+
+      <input type="number" class="form-control ab1" id="2a" placeholder="In percentage" name="aptitude" required>
     </div>
   </div>
 </div>
@@ -320,155 +301,8 @@
       <input type="number" class="form-control ab14" id="15a" placeholder="In percentage" name="core" required>
     </div>
   </div>
-  <!-- <div class="form-group col-md-6">
-    <label for="input10th" class="col-sm-6 col-form-label">10th</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
-    </div>
-  </div> -->
+
 </div>
-
-<!-- <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="input12th" class="col-sm-6 col-form-label">12th</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage" name="yourpercent12">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="input10th" class="col-sm-6 col-form-label">10th</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
-    </div>
-  </div>
-</div>
-
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="input12th" class="col-sm-6 col-form-label">12th</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="input12th" placeholder="Your 12th percentage" name="yourpercent12">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="input10th" class="col-sm-6 col-form-label">10th</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="input10th" placeholder="Your 10th percentage" name="yourpercent10">
-    </div>
-  </div>
-</div> -->
-
-
-<!-- <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputgender" class="col-sm-6 col-form-label">Gender</label>
-    <div class="col-sm-12">
-      <select class="form-control" id="inputgender" required="true" name="yourgender">
-                                  <option value="">Select gender..</option>
-                                  <option value="male">Male</option>
-                                  <option value="female">Female</option>
-                                  <option value="tgender">Transgender</option>
-                                </select>
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputcgpa" class="col-sm-6 col-form-label">CGPA</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputcgpa" placeholder="Your current CGPA" name="yourpercent13">
-    </div>
-  </div>
-</div> -->
-<!-- <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputbranch" class="col-sm-6 col-form-label">Branch</label>
-    <div class="col-sm-12">
-      <select class="form-control" id="inputbranch" required="true" name="yourbranch">
-                                  <option value="">Select branch..</option>
-                                  <option value="cse">CSE</option>
-                                  <option value="it">IT</option>
-                                  <option value="civil">CIVIL</option>
-                                  <option value="ece">ECE</option>
-                                  <option value="mech">MECH</option>
-                                  <option value="eee">EEE</option>
-                                  <option value="prod">PROD</option>
-
-                                </select>
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputcurr" class="col-sm-6 col-form-label">Current Back</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputcurr" placeholder="Enter your current back" name="yourcb">
-    </div>
-  </div>
-</div> -->
-<!-- <div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputever" class="col-sm-6 col-form-label">Ever Back</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputever" placeholder="Enter your ever back" name="youreb">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputprojects" class="col-sm-6 col-form-label">Technical projects</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputprojects" placeholder="no.of technical projects made" name="yourproject">
-    </div>
-  </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="inputquiz" class="col-sm-6 col-form-label">Technical Quiz</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputquiz" placeholder="no.of technical quiz participated" name="yourtq">
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="inputevent" class="col-sm-6 col-form-label">Miscellany Tech Events</label>
-    <div class="col-sm-12">
-      <input type="number" class="form-control" id="inputevent" placeholder="no.of miscellany tech events" name="yourte">
-    </div>
-  </div>
-</div> -->
-
-  <!-- <fieldset class="form-group">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-          <label class="form-check-label" for="gridRadios1">
-            First radio
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-          <label class="form-check-label" for="gridRadios2">
-            Second radio
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-          <label class="form-check-label" for="gridRadios3">
-            Third disabled radio
-          </label>
-        </div>
-      </div>
-    </div>
-  </fieldset> -->
-  <!-- <div class="form-group row">
-    <div class="col-sm-2">Checkbox</div>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-          Example checkbox
-        </label>
-      </div>
-    </div>
-  </div> -->
-
-
 <center>
 <div class="container d-flex h-100 ">
   <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
@@ -481,10 +315,13 @@
 </div>
 </center>
 </form>
+    {% endif %}
+
   <br>
   </div>
   <br><br><br>
 
 
   </body>
+
 </html>

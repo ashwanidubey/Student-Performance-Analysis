@@ -46,6 +46,14 @@ def predict(request):
                 s="wish you for a bright future"
             data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
         return render(request,'user_app/predict.html',data)
+def predict_before(request):
+    if request.method=='POST':
+        apti=request.POST['Aptitude']
+        prog=request.POST['Programming']
+        comm=request.POST['Communication']
+        puzz=request.POST['Puzzle']
+        manage=request.POST['Management']
+        return render(request,'user_app/myform.html',{'signal':1,'apti':apti,'prog':prog,'comm':comm,'puzz':puzz,'manage':manage})
 def history(request):
     return render(request,'user_app/history.html',{'val':1})
 def help(request):
@@ -74,7 +82,7 @@ def showquestion(request):
                apti=int(request.POST['apti'])
                comm=int(request.POST['comm'])
                start_time=datetime.now()
-               end_time= start_time + timedelta(minutes = 5)
+               end_time= start_time + timedelta(minutes = .1)
                difference_time=str(end_time-start_time).split(":")
                q_nos.clear()
                randlist=random.sample(range(1,40),10)
@@ -102,7 +110,7 @@ def showquestion(request):
             print("score ",score)
             if qn>=10:
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = 5)
+                 end_time= start_time + timedelta(minutes = .1)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -138,7 +146,7 @@ def showquestion(request):
               comm=int(request.POST['comm'])
               apti=int(request.POST['apti'])
               start_time=datetime.now()
-              end_time= start_time + timedelta(minutes = 5)
+              end_time= start_time + timedelta(minutes = .1)
               difference_time=str(end_time-start_time).split(":")
               q_nos.clear()
               randlist=random.sample(range(1,40),10)
@@ -165,7 +173,7 @@ def showquestion(request):
             print(comm)
             if qn>=10:
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = 5)
+                 end_time= start_time + timedelta(minutes = .1)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -204,7 +212,7 @@ def showquestion(request):
              apti=int(request.POST['apti'])
              comm=int(request.POST['comm'])
              start_time=datetime.now()
-             end_time= start_time + timedelta(minutes = 5)
+             end_time= start_time + timedelta(minutes = .1)
              difference_time=str(end_time-start_time).split(":")
              q_nos.clear()
              randlist=random.sample(range(1,40),10)
@@ -231,7 +239,7 @@ def showquestion(request):
             print(prog)
             if qnn>=10:
                   start_time=datetime.now()
-                  end_time= start_time + timedelta(minutes =5)
+                  end_time= start_time + timedelta(minutes =.1)
                   difference_time=str(end_time-start_time).split(":")
                   q_nos.clear()
                   randlist=random.sample(range(1,40),10)
@@ -268,7 +276,7 @@ def showquestion(request):
                  puzz=int(request.POST['puzz'])
                  manage=int(request.POST['manage'])
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = 5)
+                 end_time= start_time + timedelta(minutes = .1)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -298,7 +306,7 @@ def showquestion(request):
               print("score ",score)
               if qn>=10:
                    start_time=datetime.now()
-                   end_time= start_time + timedelta(minutes = 5)
+                   end_time= start_time + timedelta(minutes = .1)
                    difference_time=str(end_time-start_time).split(":")
                    q_nos.clear()
                    randlist=random.sample(range(1,40),10)

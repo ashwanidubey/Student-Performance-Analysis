@@ -52,24 +52,28 @@
 <center>
   <h1 style="background-color: rgb(140, 141, 146); border-radius: 20px;">You score is : {{score}}</h1>
 </center>
-
       <br>
       <h1>Aptitude : {{apti}}</h1>
     <h1>Programming : {{prog}}</h1>
     <h1>Communication : {{comm}}</h1>
     <h1>Puzzle Solving : {{puzz}}</h1>
     <h1>Management : {{manage}}</h1>
-
-      <br>
-
-
-
+    <br>
     </div>
   </div>
 </div>
 
     <div class="container" style="margin-left: 1200px;">
-      <button type="button" name="button" class="btn btn-info">continue</button>
+      <form  method="post" action="/performance/predict_before/" >
+         {% csrf_token %}
+         <input type="hidden" name="Aptitude" value={{apti}} >
+         <input type="hidden" name="Programming" value={{prog}} >
+         <input type="hidden" name="Communication" value={{comm}} >
+         <input type="hidden" name="Puzzle" value={{puzz}} >
+         <input type="hidden" name="Management" value={{manage}} >
+         <input type="submit" placeholder="continue">
+      
+    </form>
     </div>
 
 
