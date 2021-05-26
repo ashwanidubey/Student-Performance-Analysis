@@ -72,12 +72,12 @@
         <p id="u" type="button" class="col-md-2 " style=" background-color: cornflowerblue; padding: 5px; margin: 5px; border-radius: 10px;" onclick="check({{1}})">Quantitative Aptitude</p>
       {% endif %}
 
-      
+
 
 
 
       {% if verb %}
-      
+
         <p id="v" type="button" class="col-md-2 " style="background-color: red; padding: 5px; margin: 5px; border-radius: 10px;"  >Verbal Ability</p>
       {% else %}
 
@@ -92,25 +92,25 @@
         <p id="w" type="button" class="col-md-2 " style="background-color: red; padding: 5px; margin: 5px; border-radius: 10px;"  >Programming</p>
 
       {% else %}
-        <p id="w" type="button" class="col-md-2 " style="background-color: cornflowerblue; padding: 5px; margin: 5px; border-radius: 10px;" onclick="check3({{3}})" >Programming</p>
+        <p id="w" type="button" class="col-md-2 " style="background-color: cornflowerblue; padding: 5px; margin: 5px; border-radius: 10px;" onclick="check({{3}})" >Programming</p>
       {% endif %}
 
 
 
 
 
-      {% if rea %}
+      {% if puzzz %}
         <p id="x" type="button" class="col-md-2 " style="background-color: red; padding: 5px; margin: 5px; border-radius: 10px;"  >Puzzle Solving</p>
       {% else %}
 
-        <p id="x" type="button" class="col-md-2 " style="background-color: cornflowerblue; padding: 5px; margin: 5px; border-radius: 10px;" onclick="check4({{4}})" >Puzzle Solving</p>
+        <p id="x" type="button" class="col-md-2 " style="background-color: cornflowerblue; padding: 5px; margin: 5px; border-radius: 10px;" onclick="check({{4}})" >Puzzle Solving</p>
       {% endif %}
 
 
 
 
 
-      {% if mang %}
+      {% if managee %}
        <p id='y' type="button" class="col-md-2 " style="background-color: red;padding: 5px; margin: 5px; border-radius: 10px;"  >Management Skills</p>
       {% else %}
 
@@ -118,17 +118,17 @@
       {% endif %}
 
 
-      
-      
-      
-      
+
+
+
+
       <!-- <div class="col-md-2col-md-2"  style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px; border-radius: 10px;">Quantitative Aptitude</div>
       <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Verbal Ability</div>
       <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Programming</div>
       <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Puzzle Solving</div>
       <div class="col-md-2"style="background-color: rgb(168, 181, 197); padding: 5px; margin: 5px;border-radius: 10px;">Management Skills</div> -->
     </div>
-   
+
   </div>
   <br>
 
@@ -154,6 +154,8 @@
           <input type="hidden" name="apti" value={{apti}}>
           <input type="hidden" name="prog" value={{prog}}>
           <input type="hidden" name="comm" value={{comm}}>
+          <input type="hidden" name="puzz" value={{puzz}}>
+          <input type="hidden" name="manage" value={{manage}}>
           <input type="hidden" name="timesup" value=0>
           <input type="hidden" name="answer" value="{{q.answer}}{{qq.answer}}">
 
@@ -251,6 +253,8 @@
     <input type="hidden" name="apti" value={{apti}}>
     <input type="hidden" name="prog" value={{prog}}>
     <input type="hidden" name="comm" value={{comm}}>
+    <input type="hidden" name="puzz" value={{puzz}}>
+    <input type="hidden" name="manage" value={{manage}}>
     <input type="hidden" name="timesup" value=1>
      <button type="submit" class="btn btn-info ">submitt </button></td></tr>
 </form>
