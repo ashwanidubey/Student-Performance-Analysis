@@ -36,7 +36,25 @@
 
 </div>
 <br><br>
-
+      {% if extrawork %}
+      <h1>more focus required</h1>
+        {% for sub in extrawork %}
+           <li>{{sub}}</li>
+        {% endfor %}
+       {% endif %}
+       {% if mediumwork %}
+          <h1>focus required</h1>
+         {% for sub in mediumwork %}
+            <li>{{sub}}</li>
+         {% endfor %}
+        {% endif %}
+        {% if nowork %}
+        <h1>no focus required</h1>
+       {% for sub in nowork %}
+          <li>{{sub}}</li>
+       {% endfor %}
+        {% endif %}
+        <h1>{{message}}</h1>
 <div class="jumbotron text-center" style="margin: 10px 150px; padding:30px; background-color: rgb(178, 75, 199);">
   <h1><div class="spinner-border text-info"></div> &nbsp; There is {{c}} chance of  {{chance}}  % to placed</h1>
   <p>{{slogan}}</p>
@@ -44,9 +62,9 @@
     <!-- <h1>there is {{c}} chance of  {{chance}}  % to placed</h1>
     <p>{{slogan}}</p> -->
   <h1 id="info" coding={{coding}} aptitude={{aptitude}} technical={{technical}} communication={{communication}} core={{core}} presentation={{presentation}} academics={{academics}} puzzel={{puzzel}} english={{english}} programming={{programming}} management={{management}} projects={{projects}} internship={{internship}} training={{training}} backlog={{backlog}}></h1>
-  
+
   <canvas style="margin-left: 150px; margin-bottom: 100px; margin-top: 50px;" id="myChart" width="1200" height="600"></canvas>
-  
+
   <script src="{% static 'user_app/chart.js' %}"></script>
   <script src="{% static 'user_app/index.js' %}"></script>
 </body>

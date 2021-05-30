@@ -16,6 +16,7 @@ regressor.fit(x_train,y_train)
 
 q_nos=list()
 pointer=0
+papertime=5
 # def addc(request):
 #     q=models.ProgrammingLogic(q_id=31,question="q",opA="a",opB="b",opC="c",opD="d",answer="answer")
 #     q.save()
@@ -27,7 +28,24 @@ def myform(request):
 def predict(request):
     global regressor
     if request.method=='POST':
+        subjects=['coding','aptitude','technical','communication','core','presentation','academics','puzzel','english','programming','management','projects','internship','training','backlog']
         x=[request.POST['coding'],request.POST['aptitude'],request.POST['technical'],request.POST['communication'],request.POST['core'],request.POST['presentation'],request.POST['academics'],request.POST['puzzel'],request.POST['english'],request.POST['programming'],request.POST['management'],request.POST['projects'],request.POST['internship'],request.POST['training'],request.POST['backlog']]
+        corr=[0.660157,0.701694, 0.775595,0.743679, 0.905772,0.840811,0.879138,0.822065,0.894214,0.785994, 0.843258,0.822236,0.772286,0.772286,-0.632381]
+        x=list(map(int ,x))
+        diff=[]
+        for i in range(0,15):
+            diff.append(corr[i]*(100-x[i]))
+        #print(diff)
+        extrawork=[]
+        mediumwork=[]
+        nowork=[]
+        for i in range(0,15):
+            if diff[i]>35 :
+               extrawork.append(subjects[i])
+            elif diff[i]>20  :
+               mediumwork.append(subjects[i])
+            elif i<14:
+               nowork.append(subjects[i])
         xt=np.array(x).reshape(1,-1)
         pr=regressor.predict(xt)
         p=pr[0]
@@ -37,32 +55,36 @@ def predict(request):
                 s="sorry to say but you cannot get placement with this skills"
             else:
                 s="you are not in safe zone , keep learning"
-            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
+            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14],'extrawork':extrawork,'mediumwork':mediumwork ,'nowork':nowork}
         else:
             c=""
             if p<75:
                 s="keep it up"
             else:
                 s="wish you for a bright future"
-            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14]}
+            data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14] ,'extrawork':extrawork,'mediumwork':mediumwork,'nowork':nowork}
+        if x[14]>1 :
+            data['message']="clear backlog"
+        print(extrawork)
         return render(request,'user_app/predict.html',data)
 def predict_before(request):
     if request.method=='POST':
-        apti=request.POST['Aptitude']
-        prog=request.POST['Programming']
-        comm=request.POST['Communication']
-        puzz=request.POST['Puzzle']
-        manage=request.POST['Management']
-        return render(request,'user_app/myform.html',{'signal':1,'apti':apti,'prog':prog,'comm':comm,'puzz':puzz,'manage':manage})
+        apti=int(request.POST['Aptitude'])
+        prog=int(request.POST['Programming'])
+        comm=int(request.POST['Communication'])
+        puzz=int(request.POST['Puzzle'])
+        manage=int(request.POST['Management'])
+        return render(request,'user_app/myform.html',{'signal':1,'apti':apti*10,'prog':prog*10,'comm':comm*10,'puzz':puzz*10,'manage':manage*10})
 def history(request):
     return render(request,'user_app/history.html',{'val':1})
 def help(request):
     return render(request,'user_app/help.html')
 def taketest1(request):
      global q_nos
+     global papertime
      q_nos.clear()
      start_time=datetime.now()
-     end_time= start_time + timedelta(minutes = .1)
+     end_time= start_time + timedelta(minutes = papertime)
      difference_time=str(end_time-start_time).split(":")
      randlist=random.sample(range(1,40),10)
      randlist.sort()
@@ -74,6 +96,7 @@ def taketest1(request):
 
 def showquestion(request):
     global q_nos
+    global papertime
     if request.method=='POST':
         if request.POST['type']=='apti':
            if request.POST['timesup']=='1':
@@ -82,7 +105,7 @@ def showquestion(request):
                apti=int(request.POST['apti'])
                comm=int(request.POST['comm'])
                start_time=datetime.now()
-               end_time= start_time + timedelta(minutes = .1)
+               end_time= start_time + timedelta(minutes = papertime)
                difference_time=str(end_time-start_time).split(":")
                q_nos.clear()
                randlist=random.sample(range(1,40),10)
@@ -110,7 +133,7 @@ def showquestion(request):
             print("score ",score)
             if qn>=10:
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = .1)
+                 end_time= start_time + timedelta(minutes = papertime)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -146,7 +169,7 @@ def showquestion(request):
               comm=int(request.POST['comm'])
               apti=int(request.POST['apti'])
               start_time=datetime.now()
-              end_time= start_time + timedelta(minutes = .1)
+              end_time= start_time + timedelta(minutes = papertime)
               difference_time=str(end_time-start_time).split(":")
               q_nos.clear()
               randlist=random.sample(range(1,40),10)
@@ -173,7 +196,7 @@ def showquestion(request):
             print(comm)
             if qn>=10:
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = .1)
+                 end_time= start_time + timedelta(minutes = papertime)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -212,7 +235,7 @@ def showquestion(request):
              apti=int(request.POST['apti'])
              comm=int(request.POST['comm'])
              start_time=datetime.now()
-             end_time= start_time + timedelta(minutes = .1)
+             end_time= start_time + timedelta(minutes = papertime)
              difference_time=str(end_time-start_time).split(":")
              q_nos.clear()
              randlist=random.sample(range(1,40),10)
@@ -239,7 +262,7 @@ def showquestion(request):
             print(prog)
             if qnn>=10:
                   start_time=datetime.now()
-                  end_time= start_time + timedelta(minutes =.1)
+                  end_time= start_time + timedelta(minutes =papertime)
                   difference_time=str(end_time-start_time).split(":")
                   q_nos.clear()
                   randlist=random.sample(range(1,40),10)
@@ -276,7 +299,7 @@ def showquestion(request):
                  puzz=int(request.POST['puzz'])
                  manage=int(request.POST['manage'])
                  start_time=datetime.now()
-                 end_time= start_time + timedelta(minutes = .1)
+                 end_time= start_time + timedelta(minutes = papertime)
                  difference_time=str(end_time-start_time).split(":")
                  q_nos.clear()
                  randlist=random.sample(range(1,40),10)
@@ -306,7 +329,7 @@ def showquestion(request):
               print("score ",score)
               if qn>=10:
                    start_time=datetime.now()
-                   end_time= start_time + timedelta(minutes = .1)
+                   end_time= start_time + timedelta(minutes = papertime)
                    difference_time=str(end_time-start_time).split(":")
                    q_nos.clear()
                    randlist=random.sample(range(1,40),10)

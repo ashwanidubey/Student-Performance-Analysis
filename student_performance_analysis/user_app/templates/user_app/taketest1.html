@@ -137,7 +137,7 @@
 
       <div class="" style="background-color: #f1e7fe; padding: 30px;">
 
-        <form class="" action="/performance/showquestion/" method="post">
+        <form   class="" action="/performance/showquestion/" method="post">
     			{% csrf_token %}
 
     			<!-- <h3>question : {{q.question}} </h3> -->
@@ -236,7 +236,7 @@
 </div>
 <div id="mr_hidden" style="display:none;">
   <h1>i am mr hidden click submitt</h1>
-  <form class="" action="/performance/showquestion/" method="post">
+  <form id="hidden_form" class="" action="/performance/showquestion/" method="post">
     {% csrf_token %}
 
     <!-- <h3>question : {{q.question}} </h3> -->

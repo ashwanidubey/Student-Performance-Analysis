@@ -24,11 +24,13 @@ function calltimer()
   if(minutes==0 && seconds==0)
   {
     //alert("bnd kro bhot hua")
-    var y = document.getElementById("mr_hidden");
-    var z = document.getElementById("mr_shown");
-    z.style.display= "none";
-    y.style.display= "block";
-
+    //var y = document.getElementById("mr_hidden");
+    //var z = document.getElementById("mr_shown");
+    //z.style.display= "none";
+    //y.style.display= "block";
+    var form=document.getElementById("hidden_form").submit()
+    //form.op=
+    console.log(form)
   }
   x.innerHTML="min: 0"+minutes+" sec: "+seconds
 }
