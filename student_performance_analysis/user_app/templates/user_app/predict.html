@@ -35,7 +35,11 @@
 
 
 </div>
-<br><br>
+
+<br>
+<br>
+
+<!-- <br><br>
       {% if extrawork %}
       <h1>more focus required</h1>
         {% for sub in extrawork %}
@@ -54,11 +58,73 @@
           <li>{{sub}}</li>
        {% endfor %}
         {% endif %}
-        <h1>{{message}}</h1>
+        <h1>{{message}}</h1> -->
 <div class="jumbotron text-center" style="margin: 10px 150px; padding:30px; background-color: rgb(178, 75, 199);">
   <h1><div class="spinner-border text-info"></div> &nbsp; There is {{c}} chance of  {{chance}}  % to placed</h1>
   <p>{{slogan}}</p>
 </div>
+
+<br>
+<br>
+<div class="container">
+  <h3 class="bg-danger" style="padding: 25px; margin:20px; " >{{message}}</h3>
+  <br>
+  <br>
+  <div class="row">
+  
+  
+    {% if extrawork %}
+    <div class="col-md-4 col-lg-4">
+      <ul class="list-group list-group-flush"></ul>
+    <!-- <h3 class="bg-success">more focus required</h3> -->
+    <li class="list-group-item list-group-item-success">Need Very HardWork In </li>
+      {% for sub in extrawork %}
+      
+        <li class="list-group-item">{{sub}}</li>
+         
+      {% endfor %}
+  </ul>
+</div>
+     {% endif %}
+ 
+  
+
+    {% if mediumwork %}
+    <div class="col-md-4 col-lg-4">
+      <ul class="list-group list-group-flush"></ul>
+    <!-- <h3 class="bg-warning">focus required</h3> -->
+    <li class="list-group-item list-group-item-warning">Need To Be Focussed</li>
+      {% for sub in mediumwork %}
+      
+        <li class="list-group-item">{{sub}}</li>
+         
+      {% endfor %}
+  </ul>
+</div>
+     {% endif %}
+  
+
+    {% if nowork %}
+    <div class="col-md-4 col-lg-4">
+      <ul class="list-group list-group-flush"></ul>
+    <!-- <h3 class="bg-info"> No focus required</h3> -->
+    <li class="list-group-item list-group-item-info">Very Less Focus Required</li>
+      {% for sub in nowork %}
+      
+        <li class="list-group-item">{{sub}}</li>
+         
+      {% endfor %}
+  </ul>
+</div>
+     {% endif %}
+
+   
+    
+  </div>
+  </div>
+  <br><br>
+<br>
+<h3 class="bg-warning" style="padding: 25px; margin:20px; " >Graphical Representation</h3>
     <!-- <h1>there is {{c}} chance of  {{chance}}  % to placed</h1>
     <p>{{slogan}}</p> -->
   <h1 id="info" coding={{coding}} aptitude={{aptitude}} technical={{technical}} communication={{communication}} core={{core}} presentation={{presentation}} academics={{academics}} puzzel={{puzzel}} english={{english}} programming={{programming}} management={{management}} projects={{projects}} internship={{internship}} training={{training}} backlog={{backlog}}></h1>

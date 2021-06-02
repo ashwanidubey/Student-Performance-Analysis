@@ -61,29 +61,18 @@
 
     </div>
   </div>
-  <div class="form-group col-md-6">
-    <div class="col-sm-12">
 
-
-      <input type="hidden" name="aptitude" value={{apti}}>
-    </div>
-  </div>
-</div>
-
-<div class="form-row">
   <div class="form-group col-md-6">
     <label for="3a" class="col-sm-6 col-form-label">Technical Skills</label>
     <div class="col-sm-12">
       <input type="number" class="form-control ab2" id="3a" placeholder="In percentage" name="technical" required>
     </div>
   </div>
-  <div class="form-group col-md-6">
 
-    <div class="col-sm-12">
-      <input type="hidden"  name="communication" value={{comm}}>
-    </div>
-  </div>
+ 
 </div>
+
+
 
 <div class="form-row">
   <div class="form-group col-md-6">
@@ -101,12 +90,14 @@
 </div>
 
 <div class="form-row">
+  
   <div class="form-group col-md-6">
-
+    <label for="15a" class="col-sm-6 col-form-label">Core Knowledge</label>
     <div class="col-sm-12">
-      <input type="hidden" name="puzzel" value={{puzz}} >
+      <input type="number" class="form-control ab14" id="15a" placeholder="In percentage" name="core" required>
     </div>
   </div>
+
   <div class="form-group col-md-6">
     <label for="8a" class="col-sm-6 col-form-label">English Proficiency</label>
     <div class="col-sm-12">
@@ -115,20 +106,7 @@
   </div>
 </div>
 
-<div class="form-row">
-  <div class="form-group col-md-6">
 
-    <div class="col-sm-12">
-      <input type="hidden"  name="programming" value={{prog}}>
-    </div>
-  </div>
-  <div class="form-group col-md-6">
-
-    <div class="col-sm-12">
-      <input type="hidden" name="management"  value={{manage}}>
-    </div>
-  </div>
-</div>
 
 <div class="form-row">
   <div class="form-group col-md-6">
@@ -160,15 +138,43 @@
   </div>
 </div>
 
-<div class="form-row">
+<div class="form-group col-md-6">
+
+  <div class="col-sm-12">
+    <input type="hidden" name="puzzel" value={{puzz}} >
+  </div>
+</div>
+
+  
   <div class="form-group col-md-6">
-    <label for="15a" class="col-sm-6 col-form-label">Core Knowledge</label>
+
     <div class="col-sm-12">
-      <input type="number" class="form-control ab14" id="15a" placeholder="In percentage" name="core" required>
+      <input type="hidden"  name="communication" value={{comm}}>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <div class="col-sm-12">
+
+
+      <input type="hidden" name="aptitude" value={{apti}}>
     </div>
   </div>
 
-</div>
+  
+    <div class="form-group col-md-6">
+  
+      <div class="col-sm-12">
+        <input type="hidden"  name="programming" value={{prog}}>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+  
+      <div class="col-sm-12">
+        <input type="hidden" name="management"  value={{manage}}>
+      </div>
+    </div>
+  
+
 <center>
 <div class="container d-flex h-100 ">
   <div class="row justify-content-center align-self-center" style="margin:auto auto auto auto;">
@@ -324,5 +330,143 @@
 
 
   </body>
-
+  <script>
+    $(document).ready(function(){
+     $(".ab").keyup(function() {
+      if($(".ab").val()<0 || $(".ab").val()>100 ){
+          // $('#errorMsg').show();
+          alert("Input must be in between 0 to 100");
+      }
+      // else{
+      // $('#errorMsg').hide();
+      // }
+      });
+      $(".ab1").keyup(function() {
+       if($(".ab1").val()<0 || $(".ab1").val()>100 ){
+           // $('#errorMsg').show();
+           alert("Input must be in between 0 to 100");
+       }
+       // else{
+       // $('#errorMsg').hide();
+       // }
+       });
+       $(".ab2").keyup(function() {
+        if($(".ab2").val()<0 || $(".ab2").val()>100 ){
+            // $('#errorMsg').show();
+            alert("Input must be in between 0 to 100");
+        }
+        // else{
+        // $('#errorMsg').hide();
+        // }
+        });
+        $(".ab3").keyup(function() {
+         if($(".ab3").val()<0 || $(".ab3").val()>100 ){
+             // $('#errorMsg').show();
+             alert("Input must be in between 0 to 100");
+         }
+         // else{
+         // $('#errorMsg').hide();
+         // }
+         });
+         $(".ab4").keyup(function() {
+          if($(".ab4").val()<0 || $(".ab4").val()>100 ){
+              // $('#errorMsg').show();
+              alert("Input must be in between 0 to 100");
+          }
+          // else{
+          // $('#errorMsg').hide();
+          // }
+          });
+          $(".ab5").keyup(function() {
+           if($(".ab5").val()<0 || $(".ab5").val()>100 ){
+               // $('#errorMsg').show();
+               alert("Input must be in between 0 to 100");
+           }
+           // else{
+           // $('#errorMsg').hide();
+           // }
+           });
+           $(".ab6").keyup(function() {
+            if($(".ab6").val()<0 || $(".ab6").val()>100 ){
+                // $('#errorMsg').show();
+                alert("Input must be in between 0 to 100");
+            }
+            // else{
+            // $('#errorMsg').hide();
+            // }
+            });
+            $(".ab7").keyup(function() {
+             if($(".ab7").val()<0 || $(".ab7").val()>100 ){
+                 // $('#errorMsg').show();
+                 alert("Input must be in between 0 to 100");
+             }
+             // else{
+             // $('#errorMsg').hide();
+             // }
+             });
+             $(".ab8").keyup(function() {
+              if($(".ab8").val()<0 || $(".ab8").val()>100 ){
+                  // $('#errorMsg').show();
+                  alert("Input must be in between 0 to 100");
+              }
+              // else{
+              // $('#errorMsg').hide();
+              // }
+              });
+              $(".ab9").keyup(function() {
+               if($(".ab9").val()<0 || $(".ab9").val()>100 ){
+                   // $('#errorMsg').show();
+                   alert("Input must be in between 0 to 100");
+               }
+               // else{
+               // $('#errorMsg').hide();
+               // }
+               });
+               $(".ab10").keyup(function() {
+                if($(".ab10").val()<0 || $(".ab10").val()>100 ){
+                    // $('#errorMsg').show();
+                    alert("Input must be in between 0 to 100");
+                }
+                // else{
+                // $('#errorMsg').hide();
+                // }
+                });
+                $(".ab11").keyup(function() {
+                 if($(".ab11").val()<0 || $(".ab11").val()>100 ){
+                     // $('#errorMsg').show();
+                     alert("Input must be in between 0 to 100");
+                 }
+                 // else{
+                 // $('#errorMsg').hide();
+                 // }
+                 });
+                 $(".ab12").keyup(function() {
+                  if($(".ab12").val()<0 || $(".ab12").val()>100 ){
+                      // $('#errorMsg').show();
+                      alert("Input must be in between 0 to 100");
+                  }
+                  // else{
+                  // $('#errorMsg').hide();
+                  // }
+                  });
+                  $(".ab13").keyup(function() {
+                   if($(".ab13").val()<0 || $(".ab13").val()>100 ){
+                       // $('#errorMsg').show();
+                       alert("Input must be in between 0 to 100");
+                   }
+                   // else{
+                   // $('#errorMsg').hide();
+                   // }
+                   });
+                   $(".ab14").keyup(function() {
+                    if($(".ab14").val()<0 || $(".ab14").val()>100 ){
+                        // $('#errorMsg').show();
+                        alert("Input must be in between 0 to 100");
+                    }
+                    // else{
+                    // $('#errorMsg').hide();
+                    // }
+                    });
+   });
+   </script>
 </html>

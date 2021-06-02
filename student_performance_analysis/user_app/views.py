@@ -64,7 +64,7 @@ def predict(request):
                 s="wish you for a bright future"
             data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14] ,'extrawork':extrawork,'mediumwork':mediumwork,'nowork':nowork}
         if x[14]>1 :
-            data['message']="clear backlog"
+            data['message']="You are requested to clear backlog first!"
         print(extrawork)
         return render(request,'user_app/predict.html',data)
 def predict_before(request):

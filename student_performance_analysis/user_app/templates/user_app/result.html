@@ -44,11 +44,53 @@
   <h1 style="background-color: rgb(140, 141, 146); border-radius: 20px;">You score is : {{score}}</h1>
 </center>
       <br>
-      <h1>Aptitude : {{apti}}</h1>
+      <!-- <h1>Aptitude : {{apti}}</h1>
     <h1>Programming : {{prog}}</h1>
     <h1>Communication : {{comm}}</h1>
     <h1>Puzzle Solving : {{puzz}}</h1>
-    <h1>Management : {{manage}}</h1>
+    <h1>Management : {{manage}}</h1> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">SKILLS</th>
+          <th scope="col">MARKS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Aptitude  </td>
+          <td>{{apti}}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Programming</td>
+          <td>{{prog}}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Communication  </td>
+          <td>{{comm}}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Puzzle Solving</td>
+          <td>{{puzz}}</td>
+          
+        </tr> <tr>
+          <th scope="row">5</th>
+          <td>Management  </td>
+          <td>{{manage}}</td>
+          
+        </tr>
+      
+       
+      </tbody>
+    </table>
     <br>
     </div>
   </div>
