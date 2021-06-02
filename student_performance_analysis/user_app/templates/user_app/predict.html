@@ -67,27 +67,29 @@
 <br>
 <br>
 <div class="container">
+  {% if message %}
   <h3 class="bg-danger" style="padding: 25px; margin:20px; " >{{message}}</h3>
   <br>
   <br>
+  {% endif%}
   <div class="row">
-  
-  
+
+
     {% if extrawork %}
     <div class="col-md-4 col-lg-4">
       <ul class="list-group list-group-flush"></ul>
     <!-- <h3 class="bg-success">more focus required</h3> -->
     <li class="list-group-item list-group-item-success">Need Very HardWork In </li>
       {% for sub in extrawork %}
-      
+
         <li class="list-group-item">{{sub}}</li>
-         
+
       {% endfor %}
   </ul>
 </div>
      {% endif %}
- 
-  
+
+
 
     {% if mediumwork %}
     <div class="col-md-4 col-lg-4">
@@ -95,14 +97,14 @@
     <!-- <h3 class="bg-warning">focus required</h3> -->
     <li class="list-group-item list-group-item-warning">Need To Be Focussed</li>
       {% for sub in mediumwork %}
-      
+
         <li class="list-group-item">{{sub}}</li>
-         
+
       {% endfor %}
   </ul>
 </div>
      {% endif %}
-  
+
 
     {% if nowork %}
     <div class="col-md-4 col-lg-4">
@@ -110,16 +112,16 @@
     <!-- <h3 class="bg-info"> No focus required</h3> -->
     <li class="list-group-item list-group-item-info">Very Less Focus Required</li>
       {% for sub in nowork %}
-      
+
         <li class="list-group-item">{{sub}}</li>
-         
+
       {% endfor %}
   </ul>
 </div>
      {% endif %}
 
-   
-    
+
+
   </div>
   </div>
   <br><br>

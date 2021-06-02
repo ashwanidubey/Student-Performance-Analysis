@@ -63,7 +63,7 @@ def predict(request):
             else:
                 s="wish you for a bright future"
             data={'chance':p,'slogan':s,'c':c,'coding':x[0],'aptitude':x[1],'technical':x[2],'communication':x[3],'core':x[4],'presentation':x[5],'academics':x[6],'puzzel':x[7],'english':x[8],'programming':x[9],'management':x[10],'projects':x[11],'internship':x[12],'training':x[13],'backlog':x[14] ,'extrawork':extrawork,'mediumwork':mediumwork,'nowork':nowork}
-        if x[14]>1 :
+        if x[14]>0 :
             data['message']="You are requested to clear backlog first!"
         print(extrawork)
         return render(request,'user_app/predict.html',data)
@@ -366,7 +366,7 @@ def showquestion(request):
                  comm=int(request.POST['comm'])
                  puzz=int(request.POST['puzz'])
                  manage=int(request.POST['manage'])
-                 return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'puzz':puzz,'manage':manage,'apti':apti})
+                 return render(request,'user_app/result.html',{'score':score*4,'prog':prog*10,'comm':comm*10,'puzz':puzz*10,'manage':manage*10,'apti':apti*10})
 
              else:
                qn=int(request.POST['qn'])
@@ -385,7 +385,7 @@ def showquestion(request):
                print(answer)
                print(prog)
                if qn>=10:
-                    return render(request,'user_app/result.html',{'score':score,'prog':prog,'comm':comm,'apti':apti,'puzz':puzz,'manage':manage})
+                    return render(request,'user_app/result.html',{'score':score*4,'prog':prog*10,'comm':comm*10,'apti':apti*10,'puzz':puzz*10,'manage':manage*10})
                else :
                    print(qn)
                    print(q_nos[qn])
